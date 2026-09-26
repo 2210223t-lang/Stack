@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#include "config.h"
+#include "stack.h"
+#include "Debug/log.h"
+#include "Debug/Uniprint.h"
+
+
+int main()
+{
+
+    logger_open();
+    stack a = {};
+    stack_init( &a, 5 );
+    // UniPrint( &a );
+
+    for ( int i = 0; i < 20; i++ )
+    {
+        fprintf( stderr, "%d\n", i );
+        stack_push( &a, i * i );
+        if ( i == 13 )
+            stack_status( &a );
+
+    }
+    stack_destr( &a );
+
+    logger_close();
+    return 0;
+}

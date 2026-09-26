@@ -1,0 +1,12 @@
+//TODO learn about painting in log-file
+//TODO add stack memory ( last 5 operations )
+//TODO listen to lection dmitri vyacheslavovich severov about virtual memory????
+//TODO add readme + doxygen
+
+Questions
+
+1. is it ok to use global variable for current error number?
+
+2. How i must use printf stack current status
+
+3. How i can do universal printf for different types of stack_data
