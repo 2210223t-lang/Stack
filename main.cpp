@@ -21,6 +21,9 @@ int main()
             stack_status( &a );
 
     }
+
+    for ( int i = 0; i < 21; i++ )
+        stack_pop( &a );
     stack_destr( &a );
 
     logger_close();

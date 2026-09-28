@@ -8,6 +8,7 @@ Repo structure:
 
 
 
+
 ### Standard usage
 Repository contains standard vector functions from c++, such as: push or pop:
 
@@ -49,7 +50,9 @@ Also you can change output stream, to do it, open file 'Debug/lig.h' and change 
 
 ### Details
 
-All debugging functions you can find in 'Debug' folder
+All debugging functions you can find in 'Debug' folder. log files contain log - output related functions, while Utility.cpp consist of many other useful functions.
+
+For example function stack status, which prints full stack status into log-file to provide developer with understanding of current processes.
 
 
 

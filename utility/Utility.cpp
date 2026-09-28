@@ -5,6 +5,7 @@
 #include "Utility.h"
 #include "log.h"
 #include "../stack.h"
+#include "../errors.h"
 
 
 int UniPrint( stack* stk, int index )

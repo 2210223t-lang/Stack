@@ -42,8 +42,8 @@ void print_metadata( stack* stk )
 {
     #ifndef NO_DEBUG
 
-    printlg( "%s [ %p ] created by %s in %s:%d\n",
-             stk->varname, stk, stk->function, stk->filename, stk->line );
+    printlg( "<%s> [ %p ] created by %s in %s:%d\n",
+             stk->varname + 1, stk, stk->function, stk->filename, stk->line );
 
     #endif
 }
@@ -52,6 +52,7 @@ void stack_status( stack* stk )
 {
     assert( stk );
 
+    printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     print_metadata( stk );
 
     printlg( "size == %d\n",     stk->size     );
@@ -68,7 +69,7 @@ void stack_status( stack* stk )
         printlg( "\n    [ %2d ] == 666 ( FARFETCH )", i );
 
 
-    printlg( "\n" );
+    printlg( "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 }
 
 void putslg_debug( const char* a )

@@ -2,18 +2,6 @@
 
 #include "config.h"
 
-enum StkError
-{
-    Success = 0,
-    NULLPTR = 411,
-    STACK_OVERFLOW = 412,
-    INCORRECT_DIMENSIONS = 413,
-    UNFORESEEN_TYPE = 414,
-    UNIPRINT_FAILURE = 415,
-    NOT_NULL_INIT,
-
-};
-
 struct stack
 {
     ON_DEBUG( const char*  varname;
@@ -24,6 +12,8 @@ struct stack
               int             size;
               int         capacity;
 };
+
+#include "errors.h"
 
 void stack_destr( stack* stk );
 void StackIni( stack* stk,       int   capacity
