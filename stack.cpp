@@ -132,9 +132,9 @@ stack_data stack_pop( stack* stk )
     }
 
     int backup = stk->capacity;
-    stack_data temp = stk->data[ stk->size ];
+    stack temp = *stk;
 
-    stk->data[ stk->size ] = 0;
+    stk->data[ stk->size - 1 ] = 0;
     stk->size--;
 
     assert( !stack_check( stk ) );
@@ -159,12 +159,12 @@ stack_data stack_pop( stack* stk )
             printlg( "Without changing capacity\n" );
 
         printlg( "Popped value: ");
-        UniPrint( )
+        UniPrint( &temp, stk->size );
         printlg( "------------------\n\n" );
     #endif
 
 
-    return temp;
+    return temp.data[ stk->size ] ;
 }
 
 void init_info( stack* stk ON_DEBUG(,  const char*  varname,

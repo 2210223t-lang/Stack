@@ -2,6 +2,7 @@
 
 #include "../stack.h"
 
+#define logger_name "log"
 
 int logger_open();
 void printlg( const char* text, ... );

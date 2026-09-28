@@ -14,7 +14,7 @@ static FILE* logger_stream = stderr;
 int logger_open()
 {
 
-    logger_stream = fopen( ".log", "w" );
+    logger_stream = fopen( logger_name, "w" );
     return ( logger_stream ) ? 0 : -1;
 }
 
