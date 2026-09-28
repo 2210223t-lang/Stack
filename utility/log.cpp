@@ -6,8 +6,7 @@
 
 #include "../stack.h"
 #include "log.h"
-#include "../colours.h"
-
+#include "Utility.h"
 
 static FILE* logger_stream = stderr;
 
@@ -39,11 +38,6 @@ void logger_close( void )
     logger_stream = stderr;
 }
 
-void print_stack_data_lg( stack* stl, int index )
-{
-    printlg( "%d", stl->data[ index ] );
-}
-
 void print_metadata( stack* stk )
 {
     #ifndef NO_DEBUG
@@ -64,10 +58,10 @@ void stack_status( stack* stk )
     printlg( "capacity == %d\n", stk->capacity );
     printlg( "data == %p\n",     stk->data     );
 
-    for ( int i = 0; i <= stk->size; i++ )
+    for ( int i = 0; i < stk->size; i++ )
     {
         printlg( "\n*-> [ %2d ] == ", i );
-        print_stack_data_lg( stk, i );
+        UniPrint( stk, i );
     }
 
     for ( int i = stk->size + 1; i < stk->capacity; i++ )
@@ -75,4 +69,42 @@ void stack_status( stack* stk )
 
 
     printlg( "\n" );
+}
+
+void putslg_debug( const char* a )
+{
+
+    while ( *a != '\n' && *a )
+
+        switch ( *a )
+        {
+            case '\n':
+                printlg ( "\\n" );
+                a++;
+                break;
+
+            case '\a':
+                printlg( "\\a" );
+                a++;
+                break;
+
+            case '\t':
+                printlg( "\\t" );
+                a++;
+                break;
+
+            case '\b':
+                printlg( "\\b" );
+                a++;
+                break;
+
+            case '\r':
+                printlg( "\\r" );
+                a++;
+                break;
+
+            default:
+                printlg ( "%s", *( a++ ) );
+                break;
+        };
 }

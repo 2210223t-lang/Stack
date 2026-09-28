@@ -2,8 +2,8 @@
 
 #include "config.h"
 #include "stack.h"
-#include "Debug/log.h"
-#include "Debug/Uniprint.h"
+#include "utility/log.h"
+#include "utility/Utility.h"
 
 
 int main()
@@ -12,7 +12,6 @@ int main()
     logger_open();
     stack a = {};
     stack_init( &a, 5 );
-    // UniPrint( &a );
 
     for ( int i = 0; i < 20; i++ )
     {

@@ -4,6 +4,7 @@
 
 
 typedef int stack_data; ///Defines type of data, which stack work with
+#define ESCAPE "%d"
 
 #ifndef NO_DEBUG
 

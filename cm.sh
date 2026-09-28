@@ -1,2 +1,2 @@
-clang++ Debug/log.cpp main.cpp stack.cpp DEBUG/Utility.cpp
+clang++ utility/log.cpp main.cpp stack.cpp utility/Utility.cpp
 
