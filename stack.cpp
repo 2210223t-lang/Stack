@@ -3,12 +3,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-#include "Errors.h"
+#include "errors.h"
 #include "config.h"
 #include "utility/log.h"
 #include "stack.h"
 #include "utility/Utility.h"
-#include "colours.h"
 
 
 void StackIni( stack* stk,       int   capacity
@@ -72,7 +71,7 @@ void stack_push( stack* stk, stack_data temp )
         stk->data = ( stack_data* ) realloc( stk->data, sizeof( stack_data ) * stk->capacity );
 
         status = lack_of_memory( stk );
-        if ( !status )
+        if ( status )
         {
             *stk = backup;
             abort();
