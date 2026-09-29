@@ -9,25 +9,7 @@ enum FuncCode
       Popping = 2,
 };
 
-struct stack_save
-{
-      int     processes[ 3 ];
-      stack_data values[ 3 ];
-};
-
-struct stack
-{
-    ON_DEBUG( const char*  varname;
-              const char* filename;
-              const char* function;
-                    int       line;
-              stack_save     calls; );
-              stack_data*     data;
-              int             size;
-              int         capacity;
-};
-
-#include "errors.h"
+#include "utility/errors.h"
 
 void stack_destr( stack* stk );
 void StackIni( stack* stk,       int   capacity

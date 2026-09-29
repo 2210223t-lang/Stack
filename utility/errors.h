@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../config.h"
 
 enum StkError
 {
@@ -15,8 +16,6 @@ enum StkError
     MEMORY_LACK = 419,
 
 };
-
-#include "stack.h"
 
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line );
 StkError UnfType( stack* stk, const char* filename, const char* function, const int line );

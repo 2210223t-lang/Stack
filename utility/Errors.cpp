@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <assert.h>
 
-#include "stack.h"
 #include "colours.h"
 #include "errors.h"
-#include "utility/log.h"
-#include "utility/Utility.h"
+#include "log.h"
+#include "Utility.h"
 
 
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line )

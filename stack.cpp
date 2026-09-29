@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-#include "errors.h"
+#include "utility/errors.h"
 #include "config.h"
 #include "utility/log.h"
 #include "stack.h"

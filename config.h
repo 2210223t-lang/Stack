@@ -28,3 +28,22 @@ typedef int stack_data; ///Defines type of data, which stack work with
 #define unforeseen_type( stk ) UnfType( stk, __FILE__, __FUNCTION__, __LINE__ )
 #define lack_of_memory( stk, backup_stk ) MemoryLack( stk, backup_stk, __FILE__, __FUNCTION__, __LINE__ )
 #define stack_underflow( stk ) StackUnderflw( stk, __FILE__, __FUNCTION__, __LINE__ )
+
+
+struct stack_save
+{
+      int     processes[ 3 ];
+      stack_data values[ 3 ];
+};
+
+struct stack
+{
+    ON_DEBUG( const char*  varname;
+              const char* filename;
+              const char* function;
+                    int       line;
+              stack_save     calls; );
+              stack_data*     data;
+              int             size;
+              int         capacity;
+};
