@@ -14,10 +14,12 @@ void StackIni( stack* stk,       int   capacity
                 ON_DEBUG(, const char*  varname,
                            const char* filename,
                            const char* function,
-                           const int       line ) )
+                           const int       line
+                           /*stack_save     calls*/ ) )
 {
     assert( stk );
     int status = 0;
+    init_info( stk ON_DEBUG(, varname, filename, function, line ) );
 
     status = not_null( stk );
     assert( !status );
@@ -25,15 +27,27 @@ void StackIni( stack* stk,       int   capacity
     status = unforeseen_type( stk );
     assert( !status );
 
+    stack backup = *stk;
+
     stk->capacity = capacity;
+
+    status = incorrect_dimension( stk, __FILE__, __FUNCTION__, __LINE__ );
+    assert( !status );
     stk->data = ( stack_data* ) calloc( capacity, sizeof( stack_data ) );
     stk->size = 0;
 
-    status = lack_of_memory( stk );
+    status = lack_of_memory( stk, &backup );
     assert( !status );
 
     #ifndef NO_DEBUG
-        init_info( stk ON_DEBUG(, varname, filename, function, line ) );
+//         calls.processes[ 0 ] = 0;
+//         calls.values[ 0 ] = -1;
+//
+//         for ( int i = 1; i < 3; i++ )
+//         {
+//             calls.processes[ i ] = -1;
+//             calls.values   [ i ] = -1;
+//         }
         printlg( "---| Variable initialized |---\n");
         print_metadata( stk );
         printlg( "------------------------------\n\n");
@@ -70,12 +84,9 @@ void stack_push( stack* stk, stack_data temp )
         stk->capacity *= 2;
         stk->data = ( stack_data* ) realloc( stk->data, sizeof( stack_data ) * stk->capacity );
 
-        status = lack_of_memory( stk );
+        status = lack_of_memory( stk, &backup );
         if ( status )
-        {
-            *stk = backup;
             abort();
-        }
     }
 
     stk->data[ stk->size ] = temp;
@@ -83,6 +94,8 @@ void stack_push( stack* stk, stack_data temp )
 
 
     assert( !stack_check( stk ) );
+    ChangeSave( stk, Pushing, temp );
+
     #ifndef NO_DEBUG
         printlg( "Pushing success\n"
                  "---| Pushed variable |---\n" );
@@ -124,7 +137,7 @@ stack_data stack_pop( stack* stk )
     }
 
     assert( !stack_check( stk ) );
-
+    // ChangeSave( stk, Pop,)
     #ifndef NO_DEBUG
         printlg( "Popping success\n"
                  "---| Variable |---\n" );
@@ -150,8 +163,6 @@ void init_info( stack* stk ON_DEBUG(,  const char*  varname,
                                        const   int     line ) )
 {
     assert( stk );
-
-    assert( !stack_check( stk ) );
 
     #ifndef NO_DEBUG
 
@@ -182,4 +193,15 @@ StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, 
     status = stack_overflow( stk, file_call, func_call, line_call );
 
     return status;
+}
+
+void ChangeSave( stack* stk, int newcall, stack_data newvalue )
+{
+    stk->calls.processes[ 2 ] = stk->calls.processes[ 1 ];
+    stk->calls.processes[ 1 ] = stk->calls.processes[ 0 ];
+    stk->calls.processes[ 0 ] = newcall;
+
+    stk->calls.values[ 2 ] = stk->calls.values[ 1 ];
+    stk->calls.values[ 1 ] = stk->calls.values[ 0 ];
+    stk->calls.values[ 0 ] = newvalue;
 }

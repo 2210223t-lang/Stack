@@ -6,25 +6,29 @@
 #include "utility/Utility.h"
 
 
+void Pollute( stack_data** size )
+{
+    *size = NULL;
+}
+
 int main()
 {
 
     logger_open();
-    stack a = {};
-    stack_init( &a, 5 );
+    stack temp = {};
+    stack_init( &temp, 10 );
 
     for ( int i = 0; i < 20; i++ )
     {
         fprintf( stderr, "%d\n", i );
-        stack_push( &a, i * i );
-        if ( i == 13 )
-            stack_status( &a );
-
+        stack_push( &temp, i * i );
+       if ( i == 13 )
+            Pollute( &temp.data );
     }
 
     for ( int i = 0; i < 21; i++ )
-        stack_pop( &a );
-    stack_destr( &a );
+        stack_pop( &temp );
+    stack_destr( &temp );
 
     logger_close();
     return 0;

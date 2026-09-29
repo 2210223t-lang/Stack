@@ -41,7 +41,7 @@ void logger_close( void )
 void print_metadata( stack* stk )
 {
     #ifndef NO_DEBUG
-
+    assert( stk );
     printlg( "<%s> [ %p ] created by %s in %s:%d\n",
              stk->varname + 1, stk, stk->function, stk->filename, stk->line );
 
@@ -52,24 +52,59 @@ void stack_status( stack* stk )
 {
     assert( stk );
 
-    printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-    print_metadata( stk );
 
+    printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printlg( "size == %d\n",     stk->size     );
     printlg( "capacity == %d\n", stk->capacity );
-    printlg( "data == %p\n",     stk->data     );
+    if ( stk->data )
+        printlg( "data == %p\n", stk->data     );
+    else
+        printlg( "data == NULL\n" );
 
-    for ( int i = 0; i < stk->size; i++ )
+    int sizetemp = ( stk->size < 0 ) ? 0 : stk->size;
+    int captemp = ( stk->capacity < 0 ) ? 0 : stk->capacity;
+
+    int min = sizetemp;
+    if ( min > captemp )
+         min = captemp;
+
+    if ( stk->data )
     {
-        printlg( "\n*-> [ %2d ] == ", i );
-        UniPrint( stk, i );
+        for ( int i = 0; i < min; i++ )
+        {
+            printlg( "\n*-> [ %2d ] == ", i );
+            UniPrint( stk, i );
+        }
+        if ( min < 0 )
+            min = 0;
+        for ( int i = min; i < stk->capacity; i++ )
+            printlg( "\n    [ %2d ] == 666 ( FARFETCH )", i );
+
+        printlg( "\n" );
     }
 
-    for ( int i = stk->size + 1; i < stk->capacity; i++ )
-        printlg( "\n    [ %2d ] == 666 ( FARFETCH )", i );
+    // for ( int i = 0; i < 3; i++ )
+    // {
+    //     if ( stk->calls.processes[ i ] == Initialization )
+    //     {
+    //         printlg( "%d) Initialization\n" );
+    //     }
+    //     else if ( stk->calls.processes[ i ] == Pushing )
+    //     {
+    //         printlg( "%d) Pushing with " );
+    //         UniPrint( stk->calls.values[ i ] );
+    //         printlg( "\n" );
+    //     }
+    //     else if ( stk->calls.processes[ i ] == Popping )
+    //     {
+    //         printlg( "%d) Popping by : " );
+    //         UniPrint( stk->calls.values[ i ] );
+    //         printlg( "\n" );
+    //     }
+    // }
 
 
-    printlg( "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+    printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 }
 
 void putslg_debug( const char* a )

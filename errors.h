@@ -20,7 +20,7 @@ enum StkError
 
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line );
 StkError UnfType( stack* stk, const char* filename, const char* function, const int line );
-StkError MemoryLack( stack* stk, const char* filename, const char* function, const int line );
+StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const char* function, const int line );
 StkError StackUnderflw( stack* stk, const char* filename, const char* function, const int line );
 StkError incorrect_dimension( stack* stk, const char* filename, const char* function, const int line );
 StkError null_pointer( stack* stk, const char* filename, const char* function, const int line );

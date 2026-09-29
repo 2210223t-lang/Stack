@@ -22,6 +22,7 @@ StkError NotNull( stack* stk, const char* filename, const char* function, const 
         #ifndef NO_DEBUG
         printlg( "---| Variable |---\n" );
         print_metadata( stk );
+        stack_status( stk );
         printlg( "Possible issues:\n"
                  "1) Initializer failure.\n"
                  "2) Ignoring destroying function.\n" );
@@ -63,9 +64,10 @@ StkError UnfType( stack* stk, const char* filename, const char* function, const 
     return Success;
 }
 
-StkError MemoryLack( stack* stk, const char* filename, const char* function, const int line )
+StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
+    assert( backup_stk );
     assert( filename );
     assert( function );
 
@@ -74,14 +76,17 @@ StkError MemoryLack( stack* stk, const char* filename, const char* function, con
         printlg( "Lack of memory in <%s> file, <%s> function, %d line\n",
                   __FILE__, __FUNCTION__, __LINE__ );
 
-        #ifndef NO_DEBUG
+
         printlg( "---| Variable |---\n");
         print_metadata( stk );
+        stack_status( backup_stk );
         printlg( "Possible issues:\n"
                  "1) Incorrect pushing realization\n"
                  "2) Lack of memory, realloc can't find enough space\n\n"
                  "-------------------\n\n" );
-        #endif
+
+
+        *stk = *backup_stk;
 
         fprintf( stderr, "Code exited with code " RED "%d" reset " ( MEMORY_LACK )\n"
                          "To learn more, check log-file\n\n", MEMORY_LACK );
@@ -102,6 +107,7 @@ StkError StackUnderflw( stack* stk, const char* filename, const char* function, 
                  filename, function, line );
         printlg( "--| Variable |---\n");
         print_metadata( stk );
+        stack_status( stk );
         printlg( "Possible issue:\n"
                  "Incorrect logic\n"
                  "-----------------\n\n" );
@@ -121,10 +127,10 @@ StkError incorrect_dimension( stack* stk, const char* filename, const char* func
     if ( stk->size < 0 || stk-> capacity < 0 )
     {
         printlg( "INCORRECT_DIMENSIONS in <%s> file, <%s> func, %d line\n", filename, function, line );
-        printlg( "---| Dimensions |---\n" );
-        printlg( "size == <%d>\n"
-                 "capacity = <%d>\n"
-                 "Possible issues:\n"
+        printlg( "---| Variable |---\n" );
+        print_metadata( stk );
+        stack_status( stk );
+        printlg( "Possible issues:\n"
                  "1) Incorrect push/pop indexation\n"
                  "2) Incorrect initializer\n"
                  "---------------------\n\n" );
@@ -147,10 +153,11 @@ StkError null_pointer( stack* stk, const char* filename, const char* function, c
         printlg( "Null pointer in <%s> file, <%s> function, <%d> line\n", filename, function, line );
         printlg( "---| Variable |---\n" );
         print_metadata( stk );
+        stack_status( stk );
         printlg( "Possible issues:\n"
                  "1) Initializer failure.\n"
                  "2) Incorrect struct build.\n"
-                 "3) Memory overflow, check pushing and pulling func" );
+                 "3) Memory overflow, check pushing and pulling func\n" );
         printlg( "------------------\n\n" );
 
         fprintf( stderr, "Program exited with code - " RED "%d" reset " ( NULLPTR )\n"
@@ -172,7 +179,8 @@ StkError stack_overflow( stack* stk, const char* filename, const char* function,
         printlg( "STACK_OVERFLOW in <%s> file, <%s> func, %d line\n", filename, function, line );
         printlg( "---| Variable |---\n");
         print_metadata( stk );
-        printlg( "Possible issues:"
+        stack_status( stk );
+        printlg( "Possible issues:\n"
                  "1) Incorrect push/pop func\n"
                  "2) Incorrect initializer\n" );
         printlg( "------------------\n\n" );
@@ -183,3 +191,5 @@ StkError stack_overflow( stack* stk, const char* filename, const char* function,
     }
     return Success;
 }
+
+
