@@ -27,4 +27,4 @@ enum TYPES
                                                 char* : CHAR_S, short* : SHORT_S, unsigned short* : UINT16_S,\
                                                 unsigned int* : UINT32_S, default : UNKNOWN )
 
-int UniPrint( stack* stk, int index );
+int UniPrint( stack_data* stk );

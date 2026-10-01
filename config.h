@@ -1,10 +1,14 @@
 #pragma once
 
+#include <stdlib.h>
+
 // #define NO_DEBUG
 
 
 typedef int stack_data; ///Defines type of data, which stack work with
 #define ESCAPE "%d"
+#define PYRRHULOXIA 0x3AEBA71 /// CANOPY custom name
+
 
 #ifndef NO_DEBUG
 
@@ -28,6 +32,7 @@ typedef int stack_data; ///Defines type of data, which stack work with
 #define unforeseen_type( stk ) UnfType( stk, __FILE__, __FUNCTION__, __LINE__ )
 #define lack_of_memory( stk, backup_stk ) MemoryLack( stk, backup_stk, __FILE__, __FUNCTION__, __LINE__ )
 #define stack_underflow( stk ) StackUnderflw( stk, __FILE__, __FUNCTION__, __LINE__ )
+#define incorrect_dimensions( stk ) IncorrectD( stk, __FILE__, __FUNCTION__, __LINE__ )
 
 
 struct stack_save
@@ -38,12 +43,14 @@ struct stack_save
 
 struct stack
 {
+             uint64_t pyrrhuloxia1;
     ON_DEBUG( const char*  varname;
               const char* filename;
               const char* function;
                     int       line;
               stack_save     calls; );
-              stack_data*     data;
               int             size;
               int         capacity;
+              stack_data*     data;
+             uint64_t pyrrhuloxia2;
 };

@@ -1,5 +1,7 @@
+#include <cstdint>
 #include <stdio.h>
 #include <assert.h>
+#include <malloc/malloc.h>
 
 #include "colours.h"
 #include "errors.h"
@@ -100,7 +102,7 @@ StkError StackUnderflw( stack* stk, const char* filename, const char* function, 
     assert( filename );
     assert( function );
 
-    if ( !stk->size )
+    if ( stk->size == 1 )
     {
         printlg( "STACK_UNDERFLOW in <%s> file, <%s> function, %d line\n",
                  filename, function, line );
@@ -117,13 +119,21 @@ StkError StackUnderflw( stack* stk, const char* filename, const char* function, 
     return Success;
 }
 
-StkError incorrect_dimension( stack* stk, const char* filename, const char* function, const int line )
+StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
     assert( filename );
     assert( function );
 
-    if ( stk->size < 0 || stk-> capacity < 0 )
+    size_t byte_size = 2 + ( sizeof( stack_data ) * stk->capacity + sizeof( uint64_t ) - 1 ) / sizeof( uint64_t );
+
+    //< Checks if stk->data size equals real stored value
+    bool condition = ( 8 * byte_size - malloc_size( stk->data ) < 8  &&
+                       8 * byte_size - malloc_size( stk->data ) > -8 && stk->data ) ? true : false;
+
+    if ( condition )
+        $RT
+    if ( stk->size < 0 || stk->capacity <= 0 || condition ) /// stk->data size + canaries sizes
     {
         printlg( "INCORRECT_DIMENSIONS in <%s> file, <%s> func, %d line\n", filename, function, line );
         printlg( "---| Variable |---\n" );
@@ -172,7 +182,7 @@ StkError stack_overflow( stack* stk, const char* filename, const char* function,
     assert( filename );
     assert( function );
 
-    if ( stk->size + 1 > stk->capacity )
+    if ( stk->size > stk->capacity )
     {
 
         printlg( "STACK_OVERFLOW in <%s> file, <%s> func, %d line\n", filename, function, line );
@@ -191,4 +201,27 @@ StkError stack_overflow( stack* stk, const char* filename, const char* function,
     return Success;
 }
 
+StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line )
+{
+    assert( stk );
+    assert( filename );
+    assert( function );
 
+    uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( sizeof( stack_data ) * stk->capacity +7 ) / sizeof( uint64_t ) );
+
+    if ( *( uint64_t* ) stk->data != PYRRHULOXIA || ins_canary != PYRRHULOXIA ||
+         stk->pyrrhuloxia1 != PYRRHULOXIA || stk->pyrrhuloxia2 != PYRRHULOXIA )
+    {
+        printlg( "Canary inconsistency in <%s> file, <%s> function, %d line\n", filename, function, line );
+        printlg( "---| Variable |---\n" );
+        print_metadata( stk );
+        stack_status( stk );
+        printlg( "\n------------------\n" );
+
+        fprintf( stderr, "Program exited with code: " RED "%d" reset " ( CANARY_FAULT )\n"
+                         "To learn more, check log - file\n", CANARY_FAULT );
+        return CANARY_FAULT;
+    }
+
+    return Success;
+}

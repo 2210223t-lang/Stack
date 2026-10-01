@@ -1,14 +1,15 @@
+#include <cstdint>
 #include <cstdio>
 #include <stdio.h>
 #include <stdarg.h>
 #include <assert.h>
 #include <stdlib.h>
 
-#include "../stack.h"
 #include "log.h"
 #include "Utility.h"
 
 static FILE* logger_stream = stderr;
+#define MAX_PRINT/// defines max quantity of printed elements into
 
 
 int logger_open()
@@ -54,6 +55,7 @@ void stack_status( stack* stk )
 
 
     printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printlg( "pyrrhuloxia1 == 0x%X\n\n", stk->pyrrhuloxia1 );
     printlg( "size == %d\n",     stk->size     );
     printlg( "capacity == %d\n", stk->capacity );
     if ( stk->data )
@@ -70,18 +72,29 @@ void stack_status( stack* stk )
 
     if ( stk->data )
     {
-        for ( int i = 0; i < min; i++ )
+
+        printlg( "\n[ CAN ] == 0x%X ( CANARY )\n", *( (uint64_t* ) stk->data ) );
+        for ( int i = 0; i < stk->capacity && i < stk->size - 1; i++ )
         {
             printlg( "\n*-> [ %2d ] == ", i );
-            UniPrint( stk, i );
+            UniPrint( ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + i * sizeof( stack_data ) ) );
         }
-        if ( min < 0 )
-            min = 0;
-        for ( int i = min; i < stk->capacity; i++ )
-            printlg( "\n    [ %2d ] == 666 ( FARFETCH )", i );
+        if ( stk->capacity > stk->size - 1 )
+            for ( int i = stk->size - 1; i < stk->capacity; i++ )
+            {
+                printlg( "\n    [ %2d ] == ", i );
+                UniPrint( ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + i * sizeof( stack_data ) ) );
+                printlg( "( FARFETCH )" );
+            }
+        else
+            printlg( "\nDimensions fault, can't determine correct area of printing\n ");
 
-        printlg( "\n" );
+        uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( stk->capacity * sizeof( stack_data ) + 7 ) / 8 );
+        printlg( "\n\n[ CAN ] == 0x%X (CANARY)\n", ins_canary );
+
     }
+
+    printlg( "\npyrrhuloxia2 == 0x%X\n", stk->pyrrhuloxia2 );
 
     // for ( int i = 0; i < 3; i++ )
     // {

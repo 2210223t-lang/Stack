@@ -14,6 +14,7 @@ enum StkError
     DATA_SHRINKAGE = 417,
     STACK_UNDERFLOW = 418,
     MEMORY_LACK = 419,
+    CANARY_FAULT = 420,
 
 };
 
@@ -24,3 +25,5 @@ StkError StackUnderflw( stack* stk, const char* filename, const char* function, 
 StkError incorrect_dimension( stack* stk, const char* filename, const char* function, const int line );
 StkError null_pointer( stack* stk, const char* filename, const char* function, const int line );
 StkError stack_overflow( stack* stk, const char* filename, const char* function, const int line );
+StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line );
+StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line );
