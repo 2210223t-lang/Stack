@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <stdlib.h>
 
-// #define NO_DEBUG
+#define NO_DEBUG
 
 
 typedef int stack_data; ///Defines type of data, which stack work with
@@ -28,7 +28,7 @@ typedef int stack_data; ///Defines type of data, which stack work with
 
 #define stack_init( stk, capacity ) StackIni( stk, capacity )
 
-#define stack_init_desc( stk, capacity ) StackIniDesc( capacity )
+#define stack_init_desc( stk, capacity ) StackIniDesc( stk, capacity )
 
 #endif
 

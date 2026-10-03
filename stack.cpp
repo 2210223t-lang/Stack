@@ -13,11 +13,11 @@
 
 struct stack_stat
 {
-    static stack storage;
-    static int status;
+    stack storage;
+    int status;
 };
 
-static stack_stat
+static stack_stat* stack_array;
 static int stack_count = 0;
 
 
@@ -251,48 +251,43 @@ int StackIniDesc( int* desc, int capacity
 {
     stack_count++;
     if ( !stack_count )
-    {
-        stack_stat = ( int* ) calloc( 1, sizeof( int ) );
-        stack_storage = ( stack* ) calloc( 1, sizeof( stack ) );
-    }
+        stack_array = ( stack_stat* ) calloc( 1, sizeof( stack_stat ) );
     else
-    {
-        stack_stat = ( int* ) realloc( stack_stat, sizeof( int ) * stack_count );
-        stack_storage = ( stack* ) realloc( stack_storage, stack_count * sizeof( stack ) );
-    }
-    assert( stack_storage && stack_stat );
-    stack_stat[ stack_count - 1 ] = 1;
-    StackIni( &stack_storage[ stack_count - 1 ], capacity, varname, filename, function, line );
+        stack_array = ( stack_stat* ) realloc( stack_array, sizeof( stack_stat ) );
+
+    assert( stack_array );
+    stack_array[ stack_count - 1 ].status = 1;
+    StackIni( &stack_array[ stack_count - 1 ].storage, capacity ON_DEBUG( , varname, filename, function, line ) );
     *desc = stack_count - 1;
     return stack_count - 1;
 }
 
 void stack_pop_desc( int desc )
 {
-    assert( desc <= stack_count && stack_stat[ desc ] );
-    stack_pop( &stack_storage[ desc ] );
+    assert( desc <= stack_count && stack_array[ desc ].status );
+    stack_pop( &( stack_array[ desc ].storage ) );
 }
 
 void stack_push_desc( int desc, stack_data temp )
 {
-    assert( desc <= stack_count && stack_stat[ desc ] );
-    stack_push( &stack_storage[ desc ], temp );
+    assert( desc <= stack_count && stack_array[ desc ].status );
+    stack_push( &stack_array[ desc ].storage, temp );
 }
 
 void stack_destr_desc( int* desc )
 {
-    assert( *desc <= stack_count && stack_stat[ *desc ] );
-    stack_destr( &stack_storage[ *desc ] );
-    stack_stat[ *desc ] = 0;
+    assert( *desc <= stack_count && stack_array[ *desc ].status );
+    stack_destr( &( stack_array[ *desc ].storage ) );
+    stack_array[ *desc ].status = 0;
     stack_count--;
 
     int count = 0;
     for ( int i = 0; i < stack_count; i++ )
-        if ( !stack_stat[ i ] )
+        if ( !( stack_array[ i ].status ) )
             count++;
 
     if ( !count )
-        free( stack_stat );
+        free( stack_array );
     *desc = -1;
 
 }
