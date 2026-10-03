@@ -55,8 +55,8 @@ void stack_status( stack* stk )
 
 
     printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-    printlg( "hash == 0x%X\n", stk->hash );
-    printlg( "pyrrhuloxia1 == 0x%X\n\n", stk->pyrrhuloxia1 );
+    printlg( "hash--> 0x%X\n", stk->hash );
+    printlg( "pyrrhuloxia1--> 0x%X VS 0x%X <--expected\n\n", stk->pyrrhuloxia1, PYRRHULOXIA );
     printlg( "size == %d\n",     stk->size     );
     printlg( "capacity == %d\n", stk->capacity );
     if ( stk->data )
@@ -74,7 +74,7 @@ void stack_status( stack* stk )
     if ( stk->data )
     {
 
-        printlg( "\n[ CAN ] == 0x%X ( CANARY )\n", *( (uint64_t* ) stk->data ) );
+        printlg( "\n[ CAN ]--> 0x%X VS 0x%X <--expected\n", *( (uint64_t* ) stk->data ), PYRRHULOXIA );
         for ( int i = 0; i < stk->capacity && i < stk->size - 1; i++ )
         {
             printlg( "\n*-> [ %2d ] == ", i );
@@ -91,11 +91,11 @@ void stack_status( stack* stk )
             printlg( "\nDimensions fault, can't determine correct area of printing\n ");
 
         uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( stk->capacity * sizeof( stack_data ) + 7 ) / 8 );
-        printlg( "\n\n[ CAN ] == 0x%X (CANARY)\n", ins_canary );
+        printlg( "\n\n[ CAN ]--> 0x%X VS 0x%X <--expected\n", ins_canary, PYRRHULOXIA );
 
     }
 
-    printlg( "\npyrrhuloxia2 == 0x%X\n", stk->pyrrhuloxia2 );
+    printlg( "\npyrrhuloxia2--> 0x%X VS 0x%X <--expected\n", stk->pyrrhuloxia2, PYRRHULOXIA );
 
     // for ( int i = 0; i < 3; i++ )
     // {

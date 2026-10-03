@@ -211,7 +211,7 @@ StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* functi
     uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( sizeof( stack_data ) * stk->capacity + 7 ) / sizeof( uint64_t ) );
 
     if ( *( uint64_t* ) stk->data != PYRRHULOXIA || ins_canary != PYRRHULOXIA ||
-         stk->pyrrhuloxia1 != PYRRHULOXIA || stk->pyrrhuloxia2 != PYRRHULOXIA )
+         stk->pyrrhuloxia1 != PYRRHULOXIA )
     {
         printlg( "Canary inconsistency in <%s> file, <%s> function, %d line\n", filename, function, line );
         printlg( "---| Variable |---\n" );

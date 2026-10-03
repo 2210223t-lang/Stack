@@ -27,12 +27,12 @@ uint64_t Hash_Calc( stack* stk )
     assert( stk->varname );
     #endif
 
-    uint64_t hash =                   hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia1, sizeof( stk->pyrrhuloxia1 ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia2, sizeof( stk->pyrrhuloxia2 ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->size,         sizeof( stk->size ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->capacity,     sizeof( stk->capacity ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->data,         sizeof( stk->data ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->data + 8, stk->size * sizeof( stack_data ) );
+    uint64_t hash = hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia1, sizeof( stk->pyrrhuloxia1 ) );
+             hash = hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia2, sizeof( stk->pyrrhuloxia2 ) );
+             hash = hash_djb2( ( unsigned char* ) &stk->size,         sizeof( stk->size ) );
+             hash = hash_djb2( ( unsigned char* ) &stk->capacity,     sizeof( stk->capacity ) );
+             hash = hash_djb2( ( unsigned char* ) &stk->data,         sizeof( stk->data ) );
+             hash = hash_djb2( ( unsigned char* ) stk->data + 8, stk->size * sizeof( stack_data ) );
 
     #ifndef NO_DEBUG
     hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->function,  strlen( stk->function ) );

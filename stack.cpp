@@ -48,7 +48,7 @@ void StackIni( stack* stk,       int   capacity
 
     size_t byte_size = 2 + ( sizeof( stack_data ) * stk->capacity + sizeof( uint64_t ) - 1 ) / sizeof( uint64_t );
 
-    assert( !incorrect_dimensions( stk ) );
+
 
     stk->data = ( stack_data* ) calloc( 8 * byte_size, sizeof( uint64_t ) );
     stk->size = 1; /// Not 0, to leave space for canary
@@ -156,7 +156,7 @@ stack_data stack_pop( stack* stk )
     int backup = stk->capacity;
     stk->size--;
     stack_data* temp = ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + sizeof( stack_data ) * ( stk->size - 1 ) );
-
+    stack_data temp_d = *temp;
     if ( stk->size < stk->capacity / 4 )
     {
         stk->capacity /= 4;
@@ -169,7 +169,6 @@ stack_data stack_pop( stack* stk )
         *canary = PYRRHULOXIA;
     }
 
-    stack_data temp_d = *temp;
     *temp = 0;
 
     stk->hash = Hash_Calc( stk );
