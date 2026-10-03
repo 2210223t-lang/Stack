@@ -7,6 +7,7 @@
 #include "errors.h"
 #include "log.h"
 #include "Utility.h"
+#include "hash.h"
 
 
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line )
@@ -207,7 +208,7 @@ StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* functi
     assert( filename );
     assert( function );
 
-    uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( sizeof( stack_data ) * stk->capacity +7 ) / sizeof( uint64_t ) );
+    uint64_t ins_canary = *( ( uint64_t* ) stk->data + 1 + ( sizeof( stack_data ) * stk->capacity + 7 ) / sizeof( uint64_t ) );
 
     if ( *( uint64_t* ) stk->data != PYRRHULOXIA || ins_canary != PYRRHULOXIA ||
          stk->pyrrhuloxia1 != PYRRHULOXIA || stk->pyrrhuloxia2 != PYRRHULOXIA )
@@ -223,5 +224,33 @@ StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* functi
         return CANARY_FAULT;
     }
 
+    return Success;
+}
+
+StkError Hash_Mismatch( stack* stk, const char* filename, const char* function, const int line )
+{
+    assert( stk );
+    assert( filename );
+    assert( function );
+
+    uint64_t hash_back = stk->hash;
+    stk->hash = 0;
+    uint64_t hash = Hash_Calc( stk );
+
+    if ( hash != hash_back )
+    {
+
+        printlg( "Hash mismatch in <%s> file, <%s> function, %d line\n", filename, function, line );
+        printlg( "Hash exp-> 0x%X VS 0x%X <-Real hash\n", hash, hash_back );
+        printlg( "---| Variable |---\n" );
+        print_metadata( stk );
+        stack_status( stk );
+        printlg( "------------------\n" );
+
+        fprintf( stderr, "Program exited with code - " RED"%d" reset " ( HASH_MISMATCH )\n"
+                         "To learn more , check log - file\n", HASH_MISMATCH );
+        return HASH_MISMATCH;
+    }
+    stk->hash = hash_back;
     return Success;
 }

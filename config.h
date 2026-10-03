@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <stdlib.h>
 
 // #define NO_DEBUG
@@ -15,6 +16,7 @@ typedef int stack_data; ///Defines type of data, which stack work with
 #define ON_DEBUG( ... ) __VA_ARGS__
 
 #define stack_init( stk, capacity ) StackIni( stk, capacity, #stk, __FILE__, __func__, __LINE__ )
+#define stack_init_desc( stk, capacity ) StackIniDesc( stk, capacity, #stk, __FILE__, __FUNCTION__, __LINE__ )
 
 #define stack_check( stk ) STACK_CHECK( stk, __FILE__, __func__, __LINE__ )
 
@@ -26,6 +28,8 @@ typedef int stack_data; ///Defines type of data, which stack work with
 
 #define stack_init( stk, capacity ) StackIni( stk, capacity )
 
+#define stack_init_desc( stk, capacity ) StackIniDesc( capacity )
+
 #endif
 
 #define not_null( stk ) NotNull( stk, __FILE__, __FUNCTION__, __LINE__ )
@@ -33,7 +37,7 @@ typedef int stack_data; ///Defines type of data, which stack work with
 #define lack_of_memory( stk, backup_stk ) MemoryLack( stk, backup_stk, __FILE__, __FUNCTION__, __LINE__ )
 #define stack_underflow( stk ) StackUnderflw( stk, __FILE__, __FUNCTION__, __LINE__ )
 #define incorrect_dimensions( stk ) IncorrectD( stk, __FILE__, __FUNCTION__, __LINE__ )
-
+#define hash_mismatch( stk ) Hash_Mismatch( stk, __FILE__, __FUNCTION__, __LINE__ )
 
 struct stack_save
 {
@@ -52,5 +56,6 @@ struct stack
               int             size;
               int         capacity;
               stack_data*     data;
+             uint64_t         hash;
              uint64_t pyrrhuloxia2;
 };

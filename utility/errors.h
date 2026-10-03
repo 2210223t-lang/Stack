@@ -15,6 +15,7 @@ enum StkError
     STACK_UNDERFLOW = 418,
     MEMORY_LACK = 419,
     CANARY_FAULT = 420,
+    HASH_MISMATCH = 421,
 
 };
 
@@ -27,3 +28,4 @@ StkError null_pointer( stack* stk, const char* filename, const char* function, c
 StkError stack_overflow( stack* stk, const char* filename, const char* function, const int line );
 StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line );
 StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line );
+StkError Hash_Mismatch( stack* stk, const char* filename, const char* function, const int line );

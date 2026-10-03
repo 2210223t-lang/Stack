@@ -9,7 +9,17 @@
 #include "utility/log.h"
 #include "stack.h"
 #include "utility/Utility.h"
-#include "utility/colours.h"
+#include "utility/hash.h"
+
+struct stack_stat
+{
+    static stack storage;
+    static int status;
+};
+
+static stack_stat
+static int stack_count = 0;
+
 
 
 void StackIni( stack* stk,       int   capacity
@@ -24,6 +34,7 @@ void StackIni( stack* stk,       int   capacity
 
     stk->pyrrhuloxia1 = PYRRHULOXIA;
     stk->pyrrhuloxia2 = PYRRHULOXIA;
+    stk->hash = 0;
 
     init_info( stk ON_DEBUG(, varname, filename, function, line ) );
 
@@ -48,6 +59,8 @@ void StackIni( stack* stk,       int   capacity
     *ins_canary             = PYRRHULOXIA;
     *( uint64_t* )stk->data = PYRRHULOXIA;
 
+    stk->hash = Hash_Calc( stk );
+
     #ifndef NO_DEBUG
 //         calls.processes[ 0 ] = 0;
 //         calls.values[ 0 ] = -1;
@@ -61,7 +74,6 @@ void StackIni( stack* stk,       int   capacity
         print_metadata( stk );
         printlg( "Canopy value: 0x%X\n", PYRRHULOXIA );
         printlg( "------------------------------\n\n");
-        assert( stk->data );
     #endif // NO_DEBUG
 
     assert( !stack_check( stk ) );
@@ -92,7 +104,8 @@ void stack_push( stack* stk, stack_data temp )
 
     if ( stk->capacity == stk->size )
     {
-        uint64_t* canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 + ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
+        uint64_t* canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 +
+                           ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
         *canopy = 0;
 
         stk->capacity *= 2;
@@ -101,7 +114,8 @@ void stack_push( stack* stk, stack_data temp )
 
         assert ( !lack_of_memory( stk, &backup ) );
 
-        canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 + ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
+        canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 +
+                 ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
 
         *canopy = PYRRHULOXIA;
 
@@ -110,8 +124,10 @@ void stack_push( stack* stk, stack_data temp )
     *elem = temp;
     stk->size++;
 
+    stk->hash = Hash_Calc( stk );
+
     assert( !stack_check( stk ) );
-    ChangeSave( stk, Pushing, temp );
+    // ChangeSave( stk, Pushing, temp );
 
     #ifndef NO_DEBUG
         printlg( "Pushing success\n"
@@ -155,6 +171,8 @@ stack_data stack_pop( stack* stk )
 
     stack_data temp_d = *temp;
     *temp = 0;
+
+    stk->hash = Hash_Calc( stk );
 
     assert( !stack_check( stk ) );
     // ChangeSave( stk, Pop,)
@@ -217,16 +235,66 @@ StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, 
 
     status = pyrrhuloxia_check( stk, file_call, func_call, line_call );
 
+    if ( status )
+        return status;
+
+    status = Hash_Mismatch( stk, file_call, func_call, line_call );
+
     return status;
 }
 
-void ChangeSave( stack* stk, int newcall, stack_data newvalue )
+int StackIniDesc( int* desc, int capacity
+                   ON_DEBUG(, const char*  varname,
+                              const char* filename,
+                              const char* function,
+                              const int       line ) )
 {
-    stk->calls.processes[ 2 ] = stk->calls.processes[ 1 ];
-    stk->calls.processes[ 1 ] = stk->calls.processes[ 0 ];
-    stk->calls.processes[ 0 ] = newcall;
-
-    stk->calls.values[ 2 ] = stk->calls.values[ 1 ];
-    stk->calls.values[ 1 ] = stk->calls.values[ 0 ];
-    stk->calls.values[ 0 ] = newvalue;
+    stack_count++;
+    if ( !stack_count )
+    {
+        stack_stat = ( int* ) calloc( 1, sizeof( int ) );
+        stack_storage = ( stack* ) calloc( 1, sizeof( stack ) );
+    }
+    else
+    {
+        stack_stat = ( int* ) realloc( stack_stat, sizeof( int ) * stack_count );
+        stack_storage = ( stack* ) realloc( stack_storage, stack_count * sizeof( stack ) );
+    }
+    assert( stack_storage && stack_stat );
+    stack_stat[ stack_count - 1 ] = 1;
+    StackIni( &stack_storage[ stack_count - 1 ], capacity, varname, filename, function, line );
+    *desc = stack_count - 1;
+    return stack_count - 1;
 }
+
+void stack_pop_desc( int desc )
+{
+    assert( desc <= stack_count && stack_stat[ desc ] );
+    stack_pop( &stack_storage[ desc ] );
+}
+
+void stack_push_desc( int desc, stack_data temp )
+{
+    assert( desc <= stack_count && stack_stat[ desc ] );
+    stack_push( &stack_storage[ desc ], temp );
+}
+
+void stack_destr_desc( int* desc )
+{
+    assert( *desc <= stack_count && stack_stat[ *desc ] );
+    stack_destr( &stack_storage[ *desc ] );
+    stack_stat[ *desc ] = 0;
+    stack_count--;
+
+    int count = 0;
+    for ( int i = 0; i < stack_count; i++ )
+        if ( !stack_stat[ i ] )
+            count++;
+
+    if ( !count )
+        free( stack_stat );
+    *desc = -1;
+
+}
+
+

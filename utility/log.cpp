@@ -55,6 +55,7 @@ void stack_status( stack* stk )
 
 
     printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printlg( "hash == 0x%X\n", stk->hash );
     printlg( "pyrrhuloxia1 == 0x%X\n\n", stk->pyrrhuloxia1 );
     printlg( "size == %d\n",     stk->size     );
     printlg( "capacity == %d\n", stk->capacity );

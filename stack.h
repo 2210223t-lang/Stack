@@ -25,4 +25,13 @@ void init_info( stack* stk1 ON_DEBUG(, const char*  varname,
                                        const char* function,
                                        const   int     line ) );
 StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, const int line_call );
-void ChangeSave( stack* stk, int newcall, stack_data newvalue );
+// void ChangeSave( stack* stk, int newcall, stack_data newvalue );
+
+int StackIniDesc( int* desc, int capacity
+                   ON_DEBUG(, const char*  varname,
+                              const char* filename,
+                              const char* function,
+                              const int       line ) );
+void stack_pop_desc( int desc );
+void stack_push_desc( int desc, stack_data temp );
+void stack_destr_desc( int* desc );
