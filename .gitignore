@@ -1,0 +1,11 @@
+.vscode
+.log
+a.out
+TODO
+log
+cm.sh
+main.cpp
+.DS_Store
+html
+latex
+doxyfile
