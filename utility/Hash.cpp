@@ -6,7 +6,9 @@
 #include "../config.h"
 
 
-
+/**
+ * @brief Standard djb2 hashing function
+ */
 uint64_t hash_djb2( unsigned char *str, size_t size )
 {
     uint64_t hash = 5381;
@@ -17,6 +19,9 @@ uint64_t hash_djb2( unsigned char *str, size_t size )
     return hash;
 }
 
+/**
+ * @brief Hashs stk variable with one of algorithms
+ */
 uint64_t Hash_Calc( stack* stk )
 {
     assert( stk );
@@ -27,22 +32,8 @@ uint64_t Hash_Calc( stack* stk )
     assert( stk->varname );
     #endif
 
-    uint64_t hash =                   hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia1, sizeof( stk->pyrrhuloxia1 ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->pyrrhuloxia2, sizeof( stk->pyrrhuloxia2 ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->size,         sizeof( stk->size ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->capacity,     sizeof( stk->capacity ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->data,         sizeof( stk->data ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->data + 8, stk->size * sizeof( stack_data ) );
-
-    #ifndef NO_DEBUG
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->function,  strlen( stk->function ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->function, sizeof( stk->function ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->filename, sizeof( stk->filename ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->line,     sizeof( stk->line ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->filename,  strlen( stk->filename ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->varname,   strlen( stk->varname ) );
-    hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) &stk->filename, sizeof( stk->filename ) );
-    #endif
+    uint64_t hash = hash_djb2( ( unsigned char* ) stk, sizeof( stack ) );
+   hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->data, stk->size * sizeof( stack_data ) );
 
     return hash;
 }

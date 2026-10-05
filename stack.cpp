@@ -21,7 +21,9 @@ static stack_stat* stack_array;
 static int stack_count = 0;
 
 
-
+/**
+ * @brief Initializes stack variable
+ */
 void StackIni( stack* stk,       int   capacity
                 ON_DEBUG(, const char*  varname,
                            const char* filename,
@@ -34,21 +36,15 @@ void StackIni( stack* stk,       int   capacity
 
     stk->pyrrhuloxia1 = PYRRHULOXIA;
     stk->pyrrhuloxia2 = PYRRHULOXIA;
+    stk->capacity = capacity;
     stk->hash = 0;
 
     init_info( stk ON_DEBUG(, varname, filename, function, line ) );
 
-    assert( !not_null( stk ) );
-
-    assert( !unforeseen_type( stk ) );
+    assert( !not_null( stk ) && !unforeseen_type( stk ) && !incorrect_dimensions( stk ) );
 
     stack backup = *stk;
-
-    stk->capacity = capacity;
-
     size_t byte_size = 2 + ( sizeof( stack_data ) * stk->capacity + sizeof( uint64_t ) - 1 ) / sizeof( uint64_t );
-
-    assert( !incorrect_dimensions( stk ) );
 
     stk->data = ( stack_data* ) calloc( 8 * byte_size, sizeof( uint64_t ) );
     stk->size = 1; /// Not 0, to leave space for canary
@@ -62,14 +58,6 @@ void StackIni( stack* stk,       int   capacity
     stk->hash = Hash_Calc( stk );
 
     #ifndef NO_DEBUG
-//         calls.processes[ 0 ] = 0;
-//         calls.values[ 0 ] = -1;
-//
-//         for ( int i = 1; i < 3; i++ )
-//         {
-//             calls.processes[ i ] = -1;
-//             calls.values   [ i ] = -1;
-//         }
         printlg( "---| Variable initialized with canary |---\n" );
         print_metadata( stk );
         printlg( "Canopy value: 0x%X\n", PYRRHULOXIA );
@@ -79,6 +67,9 @@ void StackIni( stack* stk,       int   capacity
     assert( !stack_check( stk ) );
 }
 
+/**
+ * @brief Destroys choosen stack - variable
+ */
 void stack_destr( stack* stk )
 {
     assert( !pyrrhuloxia_check( stk, __FILE__, __FUNCTION__, __LINE__ ) );
@@ -95,6 +86,13 @@ void stack_destr( stack* stk )
     #endif // NO_DEBUG
 }
 
+/**
+ * @brief Pushes stack with temp variable
+ *
+ * @param[ in ] temp value to be initialized
+ *
+ * @param[ in out ] stk where add temp
+ */
 void stack_push( stack* stk, stack_data temp )
 {
     assert( stk );
@@ -104,8 +102,8 @@ void stack_push( stack* stk, stack_data temp )
 
     if ( stk->capacity == stk->size )
     {
-        uint64_t* canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 +
-                           ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
+        uint64_t* canopy = ( uint64_t* ) ( ( char* ) stk->data + sizeof( uint64_t ) + //TODO use ( char* ) with canopy calc
+                     sizeof( uint64_t ) * ( ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) ) );
         *canopy = 0;
 
         stk->capacity *= 2;
@@ -114,8 +112,8 @@ void stack_push( stack* stk, stack_data temp )
 
         assert ( !lack_of_memory( stk, &backup ) );
 
-        canopy = ( uint64_t* ) ( ( uint64_t* ) stk->data + 1 +
-                 ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) );
+        canopy =( uint64_t* ) ( ( char* ) stk->data + sizeof( uint64_t ) +
+          sizeof( uint64_t ) * ( ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) ) );
 
         *canopy = PYRRHULOXIA;
 
@@ -146,6 +144,11 @@ void stack_push( stack* stk, stack_data temp )
 
 }
 
+/**
+ * @brief Standard pop function
+ *
+ * @return Popped value
+ */
 stack_data stack_pop( stack* stk )
 {
     assert( stk );
@@ -156,6 +159,7 @@ stack_data stack_pop( stack* stk )
     int backup = stk->capacity;
     stk->size--;
     stack_data* temp = ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + sizeof( stack_data ) * ( stk->size - 1 ) );
+    stack backup_stk = *stk;
 
     if ( stk->size < stk->capacity / 4 )
     {
@@ -164,6 +168,8 @@ stack_data stack_pop( stack* stk )
         size_t byte_size = 2 + ( sizeof( stack_data ) * stk->capacity + sizeof( uint64_t ) - 1 ) / sizeof( uint64_t );
 
         stk->data = ( stack_data* ) realloc( stk->data, 8 * byte_size );
+
+        assert( !lack_of_memory( stk, &backup_stk ) );
 
         uint64_t* canary = ( uint64_t* ) ( ( uint64_t* ) stk->data + byte_size - 1 );
         *canary = PYRRHULOXIA;
@@ -195,6 +201,9 @@ stack_data stack_pop( stack* stk )
     return temp_d;
 }
 
+/**
+ * @brief Initializes extra data for debugging mode
+ */
 void init_info( stack* stk ON_DEBUG(,  const char*  varname,
                                        const char* filename,
                                        const char* function,
@@ -212,6 +221,11 @@ void init_info( stack* stk ON_DEBUG(,  const char*  varname,
     #endif // NO_DEBUG
 }
 
+/**
+ * @brief Checks stacks for errors
+ *
+ * @return Error's code
+ */
 StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, const int line_call )
 {
     assert( stk );
@@ -243,6 +257,9 @@ StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, 
     return status;
 }
 
+/**
+ * @brief StackIni for desc
+ */
 int StackIniDesc( int* desc, int capacity
                    ON_DEBUG(, const char*  varname,
                               const char* filename,
@@ -262,18 +279,27 @@ int StackIniDesc( int* desc, int capacity
     return stack_count - 1;
 }
 
+/**
+ * @brief Stack_Pop for desc
+ */
 void stack_pop_desc( int desc )
 {
     assert( desc <= stack_count && stack_array[ desc ].status );
     stack_pop( &( stack_array[ desc ].storage ) );
 }
 
+/**
+ * @brief Stack_push for desc
+ */
 void stack_push_desc( int desc, stack_data temp )
 {
     assert( desc <= stack_count && stack_array[ desc ].status );
     stack_push( &stack_array[ desc ].storage, temp );
 }
 
+/**
+ * @brief Stack_desc for desc
+ */
 void stack_destr_desc( int* desc )
 {
     assert( *desc <= stack_count && stack_array[ *desc ].status );
@@ -291,5 +317,3 @@ void stack_destr_desc( int* desc )
     *desc = -1;
 
 }
-
-

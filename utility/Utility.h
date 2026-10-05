@@ -22,6 +22,7 @@ enum TYPES
     UINT16_S    = 10,
 };
 
+//TODO delete generic
 #define GetType( variable ) _Generic( variable, float* : FLOAT_S, double* : DOUBLE_S, char** : STRING_S,\
                                                 int* : INT_S, long long* : LONG_LONG_S, unsigned long long* : UINT64_S,\
                                                 char* : CHAR_S, short* : SHORT_S, unsigned short* : UINT16_S,\
