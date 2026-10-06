@@ -6,6 +6,10 @@
 
 /**
  * @brief Changes output stream to a lo - file
+ *
+ * @details User can ignore this function if wants data to be printed into stderr
+ *
+ * @return Exit status
  */
 int logger_open();
 

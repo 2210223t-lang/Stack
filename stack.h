@@ -6,11 +6,15 @@
 
 /**
  * @brief Destroys choosen stack - variable
+ *
+ * @details Free stk->data
  */
 void stack_destr( stack* stk );
 
 /**
  * @brief Initializes stack variable
+ *
+ * @details Allocates stk->data with capacity cells + canaries
  */
 void StackIni( stack* stk,       int   capacity
                 ON_DEBUG(, const char*  varname,
@@ -23,7 +27,7 @@ void StackIni( stack* stk,       int   capacity
  *
  * @param[ in ] temp value to be initialized
  *
- * @param[ in out ] stk where add temp
+ * @param[ in out ] stk where to add temp
  */
 void stack_push( stack* stk, stack_data temp );
 

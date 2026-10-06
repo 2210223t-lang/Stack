@@ -2,6 +2,7 @@
 
 #include "../config.h"
 
+/// Error codes
 enum StkError
 {
     Success = 0,
@@ -23,11 +24,15 @@ enum StkError
  * @brief Checks if user is trying to initialized not-null variable
  *
  * @details Repo count on using stk_destr function
+ *
+ * @return Exit status
  */
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks if user defined correct variable type
+ *
+ * @return Exit status
  */
 StkError UnfType( stack* stk, const char* filename, const char* function, const int line );
 
@@ -37,40 +42,56 @@ StkError UnfType( stack* stk, const char* filename, const char* function, const 
  * @param[ in ] stk stack to check
  *
  * @param [ in ] backup_stk stk backup
+ *
+ * @return Exit status
  */
 StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks if stk->size < 0
+ *
+ * @return Exit status
  */
 StkError StackUnderflw( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks dimensions correctness
+ *
+ * @return Exit status
  */
 StkError incorrect_dimension( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks stk pointer correctness
+ *
+ * @return Exit status
  */
 StkError null_pointer( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks size < capacity
+ *
+ * @return Exit status
  */
 StkError stack_overflow( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks canaries status
+ *
+ * @return Exit status
  */
 StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks size & capacity > 0
+ *
+ * @return Exit status
  */
 StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line );
 
 /**
  * @brief Checks hash
+ *
+ * @return Exit status
  */
 StkError Hash_Mismatch( stack* stk, const char* filename, const char* function, const int line );

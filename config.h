@@ -6,12 +6,12 @@
 // #define NO_DEBUG
 
 
-typedef int stack_data; ///Defines type of data, which stack work with
-#define ESCAPE "%d"
-#define PYRRHULOXIA 0x3AEBA71 /// CANOPY custom name
+typedef int stack_data; //< Defines type of data, which stack work with
+#define ESCAPE "%d" //< Defines escape - sequence for uniprint
+#define PYRRHULOXIA 0x3AEBA71 //< CANOPY custom name
 
 
-#ifndef NO_DEBUG
+#ifndef NO_DEBUG //< Defining NO_DEBUG will turn off some usefull status prints about current processes
 
 #define ON_DEBUG( ... ) __VA_ARGS__
 
@@ -39,20 +39,13 @@ typedef int stack_data; ///Defines type of data, which stack work with
 #define incorrect_dimensions( stk ) IncorrectD( stk, __FILE__, __FUNCTION__, __LINE__ )
 #define hash_mismatch( stk ) Hash_Mismatch( stk, __FILE__, __FUNCTION__, __LINE__ )
 
-struct stack_save
-{
-      int     processes[ 3 ];
-      stack_data values[ 3 ];
-};
-
 struct stack
 {
              uint64_t pyrrhuloxia1;
     ON_DEBUG( const char*  varname;
               const char* filename;
               const char* function;
-                    int       line;
-              stack_save     calls; );
+                    int       line; );
               int             size;
               int         capacity;
               stack_data*     data;

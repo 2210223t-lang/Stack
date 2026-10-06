@@ -11,14 +11,15 @@
 #include "utility/Utility.h"
 #include "utility/hash.h"
 
+/// Structure, which is used in desc functions to store info about current free cells in allocated memory
 struct stack_stat
 {
-    stack storage;
-    int status;
+    stack storage;//< stack variable
+    int status;//< status of this stack variable
 };
 
-static stack_stat* stack_array;
-static int stack_count = 0;
+static stack_stat* stack_array;//< array of stack_stat variables for descr functions
+static int stack_count = 0;//< amount of current allocated cells
 
 
 void StackIni( stack* stk,       int   capacity
@@ -277,5 +278,4 @@ void stack_destr_desc( int* desc )
     if ( !count )
         free( stack_array );
     *desc = -1;
-
 }
