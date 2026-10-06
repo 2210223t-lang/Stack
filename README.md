@@ -70,4 +70,4 @@ The former functions return user real stack variables, while the last once hide 
 
 [Нетреба Николаю](https://github.com/NikolayNetreba) за помощь в тестировании при разработки этого проекта
 
-[Деду](https://wiki.mipt.tech/index.php/%D0%94%D0%B5%D0%B4%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D0%98%D0%BB%D1%8C%D1%8F_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84%D0%BE%D0%B2%D0%B8%D1%87)( ┌(・o・)┐  HELP )
+[Деду](https://soundcloud.com/ilya-dedinsky-619322134?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)( ┌(・o・)┐  HELP )
