@@ -119,12 +119,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('config_8h_sour
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// #define NO_DEBUG</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">typedef</span> <span class="keywordtype">int</span> stack_data; </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ESCAPE &quot;%d&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PYRRHULOXIA 0x3AEBA71 </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">typedef</span> <span class="keywordtype">int</span> stack_data; <span class="comment">//&lt; Defines type of data, which stack work with</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define ESCAPE &quot;%d&quot; </span><span class="comment">//&lt; Defines escape - sequence for uniprint</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define PYRRHULOXIA 0x3AEBA71 </span><span class="comment">//&lt; CANOPY custom name</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef NO_DEBUG</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef NO_DEBUG </span><span class="comment">//&lt; Defining NO_DEBUG will turn off some usefull status prints about current processes</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define ON_DEBUG( ... ) __VA_ARGS__</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -153,31 +153,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('config_8h_sour
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define hash_mismatch( stk ) Hash_Mismatch( stk, __FILE__, __FUNCTION__, __LINE__ )</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structstack__save.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structstack__save.html">stack_save</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structstack.html">   42</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structstack.html">stack</a></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordtype">int</span>     processes[ 3 ];</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      stack_data values[ 3 ];</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>             uint64_t pyrrhuloxia1;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ON_DEBUG( <span class="keyword">const</span> <span class="keywordtype">char</span>*  varname;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>              <span class="keyword">const</span> <span class="keywordtype">char</span>* filename;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>              <span class="keyword">const</span> <span class="keywordtype">char</span>* function;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    <span class="keywordtype">int</span>       line; );</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>              <span class="keywordtype">int</span>             size;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>              <span class="keywordtype">int</span>         capacity;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>              stack_data*     data;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>             uint64_t         hash;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>             uint64_t pyrrhuloxia2;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structstack.html">   48</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structstack.html">stack</a></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>             uint64_t pyrrhuloxia1;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ON_DEBUG( <span class="keyword">const</span> <span class="keywordtype">char</span>*  varname;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>              <span class="keyword">const</span> <span class="keywordtype">char</span>* filename;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>              <span class="keyword">const</span> <span class="keywordtype">char</span>* function;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    <span class="keywordtype">int</span>       line;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>              <a class="code hl_struct" href="structstack__save.html">stack_save</a>     calls; );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>              <span class="keywordtype">int</span>             size;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>              <span class="keywordtype">int</span>         capacity;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>              stack_data*     data;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>             uint64_t         hash;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>             uint64_t pyrrhuloxia2;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
-</div>
-<div class="ttc" id="astructstack__save_html"><div class="ttname"><a href="structstack__save.html">stack_save</a></div><div class="ttdef"><b>Definition</b> config.h:43</div></div>
-<div class="ttc" id="astructstack_html"><div class="ttname"><a href="structstack.html">stack</a></div><div class="ttdef"><b>Definition</b> config.h:49</div></div>
+<div class="ttc" id="astructstack_html"><div class="ttname"><a href="structstack.html">stack</a></div><div class="ttdef"><b>Definition</b> config.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
