@@ -24,28 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "Stack", "index.html", [
-    [ "Stack", "md__r_e_a_d_m_e.html", [
-      [ "Standard usage", "md__r_e_a_d_m_e.html#autotoc_md1", [
-        [ "Changing storing type", "md__r_e_a_d_m_e.html#autotoc_md2", null ]
-      ] ],
-      [ "Debugging mode", "md__r_e_a_d_m_e.html#autotoc_md3", [
-        [ "Details", "md__r_e_a_d_m_e.html#autotoc_md4", null ]
-      ] ]
-    ] ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ]
-    ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
-    ] ]
-  ] ]
+  [ "Stack", "index.html", ]
 ];
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"index.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';
