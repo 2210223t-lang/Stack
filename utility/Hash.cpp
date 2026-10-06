@@ -19,9 +19,6 @@ uint64_t hash_djb2( unsigned char *str, size_t size )
     return hash;
 }
 
-/**
- * @brief Hashs stk variable with one of algorithms
- */
 uint64_t Hash_Calc( stack* stk )
 {
     assert( stk );
@@ -33,7 +30,7 @@ uint64_t Hash_Calc( stack* stk )
     #endif
 
     uint64_t hash = hash_djb2( ( unsigned char* ) stk, sizeof( stack ) );
-   hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->data, stk->size * sizeof( stack_data ) );
+   hash = ( ( hash << 5 ) + hash ) + hash_djb2( ( unsigned char* ) stk->data, stk->capacity * sizeof( stack_data ) );
 
     return hash;
 }

@@ -10,11 +10,6 @@
 #include "hash.h"
 
 
-/**
- * @brief Checks if user is trying to initialized not-null variable
- *
- * @details Repo count on using stk_destr function
- */
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -43,9 +38,6 @@ StkError NotNull( stack* stk, const char* filename, const char* function, const 
     return Success;
 }
 
-/**
- * @brief Checks if user defined correct variable type
- */
 StkError UnfType( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -74,9 +66,6 @@ StkError UnfType( stack* stk, const char* filename, const char* function, const 
     return Success;
 }
 
-/**
- * @brief Checks if stk->data was initialized by calloc correctly
- */
 StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -108,9 +97,6 @@ StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const 
     return Success;
 }
 
-/**
- * @brief Checks if stk->size < 0
- */
 StkError StackUnderflw( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -134,9 +120,6 @@ StkError StackUnderflw( stack* stk, const char* filename, const char* function, 
     return Success;
 }
 
-/**
- * @brief Checks dimensions correctness
- */
 StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -169,9 +152,6 @@ StkError IncorrectD( stack* stk, const char* filename, const char* function, con
     return Success;
 }
 
-/**
- * @brief Checks stk pointer correctness
- */
 StkError null_pointer( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -197,9 +177,6 @@ StkError null_pointer( stack* stk, const char* filename, const char* function, c
     return Success;
 }
 
-/**
- * @brief Checks size <= capacity
- */
 StkError stack_overflow( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -225,9 +202,6 @@ StkError stack_overflow( stack* stk, const char* filename, const char* function,
     return Success;
 }
 
-/**
- * @brief Checks canaries status
- */
 StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );
@@ -253,9 +227,6 @@ StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* functi
     return Success;
 }
 
-/**
- * @brief Checks hash
- */
 StkError Hash_Mismatch( stack* stk, const char* filename, const char* function, const int line )
 {
     assert( stk );

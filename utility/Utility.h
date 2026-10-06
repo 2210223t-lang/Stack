@@ -3,10 +3,11 @@
 #include <stdio.h>
 #include "../stack.h"
 
-#define $RT fprintf( stderr, "\e[0;95m RTRTRTRTRTRT!!!!!\n\e[0m" );
+#define $RT fprintf( stderr, "\e[0;95m RTRTRTRTRTRT!!!!!\n\e[0m" );//< Useful debugging macro
 
-void puts_debug( const char* a, FILE* ostream );
+void puts_debug( const char* a, FILE* ostream );//< Debugging puts
 
+///All expected types of stack_data
 enum TYPES
 {
     UNKNOWN     = 0,
@@ -28,4 +29,7 @@ enum TYPES
                                                 char* : CHAR_S, short* : SHORT_S, unsigned short* : UINT16_S,\
                                                 unsigned int* : UINT32_S, default : UNKNOWN )
 
+/**
+ * @brief Universal printlg for every types of stack_data
+ */
 int UniPrint( stack_data* stk );

@@ -8,8 +8,6 @@
 #include "errors.h"
 
 
-/**
- * @ */
 int UniPrint( stack_data* data )
 {
     int type = GetType( data );

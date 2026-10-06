@@ -19,13 +19,58 @@ enum StkError
 
 };
 
+/**
+ * @brief Checks if user is trying to initialized not-null variable
+ *
+ * @details Repo count on using stk_destr function
+ */
 StkError NotNull( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks if user defined correct variable type
+ */
 StkError UnfType( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks if stk->data was initialized by calloc correctly
+ *
+ * @param[ in ] stk stack to check
+ *
+ * @param [ in ] backup_stk stk backup
+ */
 StkError MemoryLack( stack* stk, stack* backup_stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks if stk->size < 0
+ */
 StkError StackUnderflw( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks dimensions correctness
+ */
 StkError incorrect_dimension( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks stk pointer correctness
+ */
 StkError null_pointer( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks size < capacity
+ */
 StkError stack_overflow( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks canaries status
+ */
 StkError pyrrhuloxia_check( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks size & capacity > 0
+ */
 StkError IncorrectD( stack* stk, const char* filename, const char* function, const int line );
+
+/**
+ * @brief Checks hash
+ */
 StkError Hash_Mismatch( stack* stk, const char* filename, const char* function, const int line );

@@ -11,18 +11,12 @@
 static FILE* logger_stream = stderr;//< Standard stream, which will be used if user didn't used logger_open
 
 
-/**
- * @brief Changes output stream to a lo - file
- */
 int logger_open()
 {
     logger_stream = fopen( logger_name, "w" );
     return ( logger_stream ) ? 0 : -1;
 }
 
-/**
- * @brief fprintf( logger_stream ) realization
- */
 void printlg( const char* text, ... )
 {
     assert( text );
@@ -35,9 +29,6 @@ void printlg( const char* text, ... )
     fflush( logger_stream );
 }
 
-/**
- * @brief Closes logger_stream and sets it to stderr
- */
 void logger_close( void )
 {
     if ( logger_stream != stderr )
@@ -46,9 +37,6 @@ void logger_close( void )
     logger_stream = stderr;
 }
 
-/**
- * @brief Prints stack variable metadata into logger_stream
- */
 void print_metadata( stack* stk )
 {
     #ifndef NO_DEBUG
@@ -59,9 +47,6 @@ void print_metadata( stack* stk )
     #endif
 }
 
-/**
- * @brief Prints stack status ( if's value ) into logger_stream
- */
 void stack_status( stack* stk )
 {
     assert( stk );
@@ -134,9 +119,6 @@ void stack_status( stack* stk )
     printlg( "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 }
 
-/**
- * @brief Debugging puts function
- */
 void putslg_debug( const char* a )
 {
 

@@ -21,9 +21,6 @@ static stack_stat* stack_array;
 static int stack_count = 0;
 
 
-/**
- * @brief Initializes stack variable
- */
 void StackIni( stack* stk,       int   capacity
                 ON_DEBUG(, const char*  varname,
                            const char* filename,
@@ -46,7 +43,7 @@ void StackIni( stack* stk,       int   capacity
     stack backup = *stk;
     size_t byte_size = 2 + ( sizeof( stack_data ) * stk->capacity + sizeof( uint64_t ) - 1 ) / sizeof( uint64_t );
 
-    stk->data = ( stack_data* ) calloc( 8 * byte_size, sizeof( uint64_t ) );
+    stk->data = ( stack_data* ) calloc( byte_size, sizeof( uint64_t ) );
     stk->size = 1; /// Not 0, to leave space for canary
 
     assert( !lack_of_memory( stk, &backup ) );
@@ -67,9 +64,6 @@ void StackIni( stack* stk,       int   capacity
     assert( !stack_check( stk ) );
 }
 
-/**
- * @brief Destroys choosen stack - variable
- */
 void stack_destr( stack* stk )
 {
     assert( !pyrrhuloxia_check( stk, __FILE__, __FUNCTION__, __LINE__ ) );
@@ -86,13 +80,6 @@ void stack_destr( stack* stk )
     #endif // NO_DEBUG
 }
 
-/**
- * @brief Pushes stack with temp variable
- *
- * @param[ in ] temp value to be initialized
- *
- * @param[ in out ] stk where add temp
- */
 void stack_push( stack* stk, stack_data temp )
 {
     assert( stk );
@@ -116,12 +103,12 @@ void stack_push( stack* stk, stack_data temp )
           sizeof( uint64_t ) * ( ( stk->capacity * sizeof( stack_data ) + 7 ) / sizeof( uint64_t ) ) );
 
         *canopy = PYRRHULOXIA;
-
     }
     stack_data* elem = ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + ( stk->size - 1 ) * sizeof( stack_data ) );
     *elem = temp;
     stk->size++;
 
+    stk->hash = 0;
     stk->hash = Hash_Calc( stk );
 
     assert( !stack_check( stk ) );
@@ -144,11 +131,6 @@ void stack_push( stack* stk, stack_data temp )
 
 }
 
-/**
- * @brief Standard pop function
- *
- * @return Popped value
- */
 stack_data stack_pop( stack* stk )
 {
     assert( stk );
@@ -160,6 +142,7 @@ stack_data stack_pop( stack* stk )
     stk->size--;
     stack_data* temp = ( stack_data* ) ( ( char* ) stk->data + sizeof( uint64_t ) + sizeof( stack_data ) * ( stk->size - 1 ) );
     stack backup_stk = *stk;
+    stack_data temp_d = *temp;
 
     if ( stk->size < stk->capacity / 4 )
     {
@@ -175,9 +158,9 @@ stack_data stack_pop( stack* stk )
         *canary = PYRRHULOXIA;
     }
 
-    stack_data temp_d = *temp;
     *temp = 0;
 
+    stk->hash = 0;
     stk->hash = Hash_Calc( stk );
 
     assert( !stack_check( stk ) );
@@ -201,9 +184,6 @@ stack_data stack_pop( stack* stk )
     return temp_d;
 }
 
-/**
- * @brief Initializes extra data for debugging mode
- */
 void init_info( stack* stk ON_DEBUG(,  const char*  varname,
                                        const char* filename,
                                        const char* function,
@@ -221,11 +201,6 @@ void init_info( stack* stk ON_DEBUG(,  const char*  varname,
     #endif // NO_DEBUG
 }
 
-/**
- * @brief Checks stacks for errors
- *
- * @return Error's code
- */
 StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, const int line_call )
 {
     assert( stk );
@@ -257,9 +232,6 @@ StkError STACK_CHECK( stack* stk, const char* file_call, const char* func_call, 
     return status;
 }
 
-/**
- * @brief StackIni for desc
- */
 int StackIniDesc( int* desc, int capacity
                    ON_DEBUG(, const char*  varname,
                               const char* filename,
@@ -271,7 +243,6 @@ int StackIniDesc( int* desc, int capacity
         stack_array = ( stack_stat* ) calloc( 1, sizeof( stack_stat ) );
     else
         stack_array = ( stack_stat* ) realloc( stack_array, sizeof( stack_stat ) );
-
     assert( stack_array );
     stack_array[ stack_count - 1 ].status = 1;
     StackIni( &stack_array[ stack_count - 1 ].storage, capacity ON_DEBUG( , varname, filename, function, line ) );
@@ -279,27 +250,18 @@ int StackIniDesc( int* desc, int capacity
     return stack_count - 1;
 }
 
-/**
- * @brief Stack_Pop for desc
- */
 void stack_pop_desc( int desc )
 {
     assert( desc <= stack_count && stack_array[ desc ].status );
     stack_pop( &( stack_array[ desc ].storage ) );
 }
 
-/**
- * @brief Stack_push for desc
- */
 void stack_push_desc( int desc, stack_data temp )
 {
     assert( desc <= stack_count && stack_array[ desc ].status );
     stack_push( &stack_array[ desc ].storage, temp );
 }
 
-/**
- * @brief Stack_desc for desc
- */
 void stack_destr_desc( int* desc )
 {
     assert( *desc <= stack_count && stack_array[ *desc ].status );
