@@ -1,0 +1,155 @@
+\doxysection{stack.\+cpp File Reference}
+\hypertarget{stack_8cpp}{}\label{stack_8cpp}\index{stack.cpp@{stack.cpp}}
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \+\#include "{}utility/\+errors.\+h"{}}\newline
+{\ttfamily \+\#include "{}config.\+h"{}}\newline
+{\ttfamily \+\#include "{}utility/\+log.\+h"{}}\newline
+{\ttfamily \+\#include "{}stack.\+h"{}}\newline
+{\ttfamily \+\#include "{}utility/\+\+Utility.\+h"{}}\newline
+{\ttfamily \+\#include "{}utility/\+hash.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structstack__stat}{stack\+\_\+stat}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f}{Stack\+Ini}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, int capacity ON\+\_\+\+DEBUG(, const char \texorpdfstring{$\ast$}{*}varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line))
+\begin{DoxyCompactList}\small\item\em Initializes stack variable. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a42ac4fc7cb95605f33153d89a968aeca}{stack\+\_\+destr}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Destroys choosen stack -\/ variable. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a2aab661a719481509de7d574c581a665}{stack\+\_\+push}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} temp)
+\begin{DoxyCompactList}\small\item\em Pushes stack with temp variable. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} \doxymbox{\hyperlink{stack_8cpp_a009296971d4e260488097e876ba1d2f5}{stack\+\_\+pop}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Standard pop function. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a34cbbd58b3d3b94e8335a8cad5eb6bfc}{init\+\_\+info}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk ON\+\_\+\+DEBUG(, const char \texorpdfstring{$\ast$}{*}varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line))
+\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{stack_8cpp_a2b82197191ac6fc4ef24e10abd20ea60}{STACK\+\_\+\+CHECK}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}file\+\_\+call, const char \texorpdfstring{$\ast$}{*}func\+\_\+call, const int line\+\_\+call)
+\begin{DoxyCompactList}\small\item\em Checks stacks for errors. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}{Stack\+Ini\+Desc}} (int \texorpdfstring{$\ast$}{*}desc, int capacity ON\+\_\+\+DEBUG(, const char \texorpdfstring{$\ast$}{*}varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line))
+\begin{DoxyCompactList}\small\item\em Stack\+Ini for desc. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a20a6d39d8d9a01c9c80836a6f0a2dee4}{stack\+\_\+pop\+\_\+desc}} (int desc)
+\begin{DoxyCompactList}\small\item\em Stack\+\_\+\+Pop for desc. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a1053422d2297c6b1d5abcccbe4449df9}{stack\+\_\+push\+\_\+desc}} (int desc, \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} temp)
+\begin{DoxyCompactList}\small\item\em Stack\+\_\+push for desc. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5}{stack\+\_\+destr\+\_\+desc}} (int \texorpdfstring{$\ast$}{*}desc)
+\begin{DoxyCompactList}\small\item\em Stack\+\_\+desc for desc. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{stack_8cpp_doc-func-members}
+\Hypertarget{stack_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{stack_8cpp_a34cbbd58b3d3b94e8335a8cad5eb6bfc}\index{stack.cpp@{stack.cpp}!init\_info@{init\_info}}
+\index{init\_info@{init\_info}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{init\_info()}{init\_info()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a34cbbd58b3d3b94e8335a8cad5eb6bfc} 
+void init\+\_\+info (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk }]{ON\+\_\+\+DEBUG}{, const char \texorpdfstring{$\ast$}{*} varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line}\end{DoxyParamCaption})}
+
+\Hypertarget{stack_8cpp_a2b82197191ac6fc4ef24e10abd20ea60}\index{stack.cpp@{stack.cpp}!STACK\_CHECK@{STACK\_CHECK}}
+\index{STACK\_CHECK@{STACK\_CHECK}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{STACK\_CHECK()}{STACK\_CHECK()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a2b82197191ac6fc4ef24e10abd20ea60} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} STACK\+\_\+\+CHECK (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+\_\+call}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{func\+\_\+call}{, }\item[{const int}]{line\+\_\+call}{}\end{DoxyParamCaption})}
+
+
+
+Checks stacks for errors. 
+
+\begin{DoxyReturn}{Returns}
+Error\textquotesingle{}s code 
+\end{DoxyReturn}
+\Hypertarget{stack_8cpp_a42ac4fc7cb95605f33153d89a968aeca}\index{stack.cpp@{stack.cpp}!stack\_destr@{stack\_destr}}
+\index{stack\_destr@{stack\_destr}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_destr()}{stack\_destr()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a42ac4fc7cb95605f33153d89a968aeca} 
+void stack\+\_\+destr (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Destroys choosen stack -\/ variable. 
+
+\Hypertarget{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5}\index{stack.cpp@{stack.cpp}!stack\_destr\_desc@{stack\_destr\_desc}}
+\index{stack\_destr\_desc@{stack\_destr\_desc}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_destr\_desc()}{stack\_destr\_desc()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5} 
+void stack\+\_\+destr\+\_\+desc (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{desc}{}\end{DoxyParamCaption})}
+
+
+
+Stack\+\_\+desc for desc. 
+
+\Hypertarget{stack_8cpp_a009296971d4e260488097e876ba1d2f5}\index{stack.cpp@{stack.cpp}!stack\_pop@{stack\_pop}}
+\index{stack\_pop@{stack\_pop}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_pop()}{stack\_pop()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a009296971d4e260488097e876ba1d2f5} 
+\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} stack\+\_\+pop (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Standard pop function. 
+
+\begin{DoxyReturn}{Returns}
+Popped value 
+\end{DoxyReturn}
+\Hypertarget{stack_8cpp_a20a6d39d8d9a01c9c80836a6f0a2dee4}\index{stack.cpp@{stack.cpp}!stack\_pop\_desc@{stack\_pop\_desc}}
+\index{stack\_pop\_desc@{stack\_pop\_desc}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_pop\_desc()}{stack\_pop\_desc()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a20a6d39d8d9a01c9c80836a6f0a2dee4} 
+void stack\+\_\+pop\+\_\+desc (\begin{DoxyParamCaption}\item[{int}]{desc}{}\end{DoxyParamCaption})}
+
+
+
+Stack\+\_\+\+Pop for desc. 
+
+\Hypertarget{stack_8cpp_a2aab661a719481509de7d574c581a665}\index{stack.cpp@{stack.cpp}!stack\_push@{stack\_push}}
+\index{stack\_push@{stack\_push}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_push()}{stack\_push()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a2aab661a719481509de7d574c581a665} 
+void stack\+\_\+push (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}}}]{temp}{}\end{DoxyParamCaption})}
+
+
+
+Pushes stack with temp variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em temp} & value to be initialized\\
+\hline
+\doxymbox{\texttt{in,out}}  & {\em stk} & where add temp \\
+\hline
+\end{DoxyParams}
+\Hypertarget{stack_8cpp_a1053422d2297c6b1d5abcccbe4449df9}\index{stack.cpp@{stack.cpp}!stack\_push\_desc@{stack\_push\_desc}}
+\index{stack\_push\_desc@{stack\_push\_desc}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_push\_desc()}{stack\_push\_desc()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a1053422d2297c6b1d5abcccbe4449df9} 
+void stack\+\_\+push\+\_\+desc (\begin{DoxyParamCaption}\item[{int}]{desc}{, }\item[{\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}}}]{temp}{}\end{DoxyParamCaption})}
+
+
+
+Stack\+\_\+push for desc. 
+
+\Hypertarget{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f}\index{stack.cpp@{stack.cpp}!StackIni@{StackIni}}
+\index{StackIni@{StackIni}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{StackIni()}{StackIni()}}
+{\footnotesize\ttfamily \label{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f} 
+void Stack\+Ini (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{int capacity }]{ON\+\_\+\+DEBUG}{, const char \texorpdfstring{$\ast$}{*} varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line}\end{DoxyParamCaption})}
+
+
+
+Initializes stack variable. 
+
+Not 0, to leave space for canary\Hypertarget{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}\index{stack.cpp@{stack.cpp}!StackIniDesc@{StackIniDesc}}
+\index{StackIniDesc@{StackIniDesc}!stack.cpp@{stack.cpp}}
+\doxysubsubsection{\texorpdfstring{StackIniDesc()}{StackIniDesc()}}
+{\footnotesize\ttfamily \label{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7} 
+int Stack\+Ini\+Desc (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{desc}{, }\item[{int capacity }]{ON\+\_\+\+DEBUG}{, const char \texorpdfstring{$\ast$}{*} varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line}\end{DoxyParamCaption})}
+
+
+
+Stack\+Ini for desc. 
+

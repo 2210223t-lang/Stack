@@ -1,0 +1,185 @@
+\doxysection{config.\+h File Reference}
+\hypertarget{config_8h}{}\label{config_8h}\index{config.h@{config.h}}
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+{\ttfamily \+\#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structstack__save}{stack\+\_\+save}}
+\item 
+struct \doxymbox{\hyperlink{structstack}{stack}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_afe4b0e625372cd38ec60150d6f5594b8}{ESCAPE}}~"{}\%d"{}
+\begin{DoxyCompactList}\small\item\em Defines type of data, which stack work with. \end{DoxyCompactList}\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a64f0441332a4af08f409af8bbda19928}{PYRRHULOXIA}}~0x3\+AEBA71
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a1bdd7c1369b250215a080e8421d4ecf3}{ON\+\_\+\+DEBUG}}(...)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a4fb692b4903f3720e918c8326f5c6d0d}{stack\+\_\+init}}(stk,  capacity)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a93e277d35d1b455b1bdae4ac1a15c9b5}{stack\+\_\+init\+\_\+desc}}(stk,  capacity)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a71547ac7eea18206c463fcddce8c65de}{stack\+\_\+check}}(stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a9963f94c2f1cdba889fe415d870e2a30}{not\+\_\+null}}(stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_af88aaa3cb754a63b3ec19215f6f09d5d}{unforeseen\+\_\+type}}(stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_ab32f25588a0c842000b76caf5fb741e0}{lack\+\_\+of\+\_\+memory}}(stk,  backup\+\_\+stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_af0b7c05c3b7e2d3bdf2861983fc2a7b8}{stack\+\_\+underflow}}(stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_ab87e2be7a02acfaaf33cf80c7626a2c2}{incorrect\+\_\+dimensions}}(stk)
+\item 
+\+\#define \doxymbox{\hyperlink{config_8h_a613504a842166314bc84c3555d91cf1f}{hash\+\_\+mismatch}}(stk)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\label{config_8h_doc-define-members}
+\Hypertarget{config_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{config_8h_afe4b0e625372cd38ec60150d6f5594b8}\index{config.h@{config.h}!ESCAPE@{ESCAPE}}
+\index{ESCAPE@{ESCAPE}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{ESCAPE}{ESCAPE}}
+{\footnotesize\ttfamily \label{config_8h_afe4b0e625372cd38ec60150d6f5594b8} 
+\+\#define ESCAPE~"{}\%d"{}}
+
+
+
+Defines type of data, which stack work with. 
+
+\Hypertarget{config_8h_a613504a842166314bc84c3555d91cf1f}\index{config.h@{config.h}!hash\_mismatch@{hash\_mismatch}}
+\index{hash\_mismatch@{hash\_mismatch}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{hash\_mismatch}{hash\_mismatch}}
+{\footnotesize\ttfamily \label{config_8h_a613504a842166314bc84c3555d91cf1f} 
+\+\#define hash\+\_\+mismatch(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_aae637b622d08821181b8d2dd700687a9}{Hash\_Mismatch}}(\ stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_ab87e2be7a02acfaaf33cf80c7626a2c2}\index{config.h@{config.h}!incorrect\_dimensions@{incorrect\_dimensions}}
+\index{incorrect\_dimensions@{incorrect\_dimensions}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{incorrect\_dimensions}{incorrect\_dimensions}}
+{\footnotesize\ttfamily \label{config_8h_ab87e2be7a02acfaaf33cf80c7626a2c2} 
+\+\#define incorrect\+\_\+dimensions(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242}{IncorrectD}}(\ stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_ab32f25588a0c842000b76caf5fb741e0}\index{config.h@{config.h}!lack\_of\_memory@{lack\_of\_memory}}
+\index{lack\_of\_memory@{lack\_of\_memory}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{lack\_of\_memory}{lack\_of\_memory}}
+{\footnotesize\ttfamily \label{config_8h_ab32f25588a0c842000b76caf5fb741e0} 
+\+\#define lack\+\_\+of\+\_\+memory(\begin{DoxyParamCaption}\item[{}]{stk}{, }\item[{}]{backup\+\_\+stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4}{MemoryLack}}(\ stk,\ backup\_stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_a9963f94c2f1cdba889fe415d870e2a30}\index{config.h@{config.h}!not\_null@{not\_null}}
+\index{not\_null@{not\_null}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{not\_null}{not\_null}}
+{\footnotesize\ttfamily \label{config_8h_a9963f94c2f1cdba889fe415d870e2a30} 
+\+\#define not\+\_\+null(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6}{NotNull}}(\ stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_a1bdd7c1369b250215a080e8421d4ecf3}\index{config.h@{config.h}!ON\_DEBUG@{ON\_DEBUG}}
+\index{ON\_DEBUG@{ON\_DEBUG}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{ON\_DEBUG}{ON\_DEBUG}}
+{\footnotesize\ttfamily \label{config_8h_a1bdd7c1369b250215a080e8421d4ecf3} 
+\+\#define ON\+\_\+\+DEBUG(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_\_VA\_ARGS\_\_}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_a64f0441332a4af08f409af8bbda19928}\index{config.h@{config.h}!PYRRHULOXIA@{PYRRHULOXIA}}
+\index{PYRRHULOXIA@{PYRRHULOXIA}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{PYRRHULOXIA}{PYRRHULOXIA}}
+{\footnotesize\ttfamily \label{config_8h_a64f0441332a4af08f409af8bbda19928} 
+\+\#define PYRRHULOXIA~0x3\+AEBA71}
+
+\Hypertarget{config_8h_a71547ac7eea18206c463fcddce8c65de}\index{config.h@{config.h}!stack\_check@{stack\_check}}
+\index{stack\_check@{stack\_check}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{stack\_check}{stack\_check}}
+{\footnotesize\ttfamily \label{config_8h_a71547ac7eea18206c463fcddce8c65de} 
+\+\#define stack\+\_\+check(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{stack_8cpp_a2b82197191ac6fc4ef24e10abd20ea60}{STACK\_CHECK}}(\ stk,\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_a4fb692b4903f3720e918c8326f5c6d0d}\index{config.h@{config.h}!stack\_init@{stack\_init}}
+\index{stack\_init@{stack\_init}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{stack\_init}{stack\_init}}
+{\footnotesize\ttfamily \label{config_8h_a4fb692b4903f3720e918c8326f5c6d0d} 
+\+\#define stack\+\_\+init(\begin{DoxyParamCaption}\item[{}]{stk}{, }\item[{}]{capacity}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f}{StackIni}}(\ stk,\ capacity,\ \#stk,\ \_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_a93e277d35d1b455b1bdae4ac1a15c9b5}\index{config.h@{config.h}!stack\_init\_desc@{stack\_init\_desc}}
+\index{stack\_init\_desc@{stack\_init\_desc}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{stack\_init\_desc}{stack\_init\_desc}}
+{\footnotesize\ttfamily \label{config_8h_a93e277d35d1b455b1bdae4ac1a15c9b5} 
+\+\#define stack\+\_\+init\+\_\+desc(\begin{DoxyParamCaption}\item[{}]{stk}{, }\item[{}]{capacity}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}{StackIniDesc}}(\ stk,\ capacity,\ \#stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_af0b7c05c3b7e2d3bdf2861983fc2a7b8}\index{config.h@{config.h}!stack\_underflow@{stack\_underflow}}
+\index{stack\_underflow@{stack\_underflow}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{stack\_underflow}{stack\_underflow}}
+{\footnotesize\ttfamily \label{config_8h_af0b7c05c3b7e2d3bdf2861983fc2a7b8} 
+\+\#define stack\+\_\+underflow(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3}{StackUnderflw}}(\ stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+\Hypertarget{config_8h_af88aaa3cb754a63b3ec19215f6f09d5d}\index{config.h@{config.h}!unforeseen\_type@{unforeseen\_type}}
+\index{unforeseen\_type@{unforeseen\_type}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{unforeseen\_type}{unforeseen\_type}}
+{\footnotesize\ttfamily \label{config_8h_af88aaa3cb754a63b3ec19215f6f09d5d} 
+\+\#define unforeseen\+\_\+type(\begin{DoxyParamCaption}\item[{}]{stk}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{_errors_8cpp_a6388fff7f36da786af1c878770734246}{UnfType}}(\ stk,\ \_\_FILE\_\_,\ \_\_FUNCTION\_\_,\ \_\_LINE\_\_\ )}
+
+\end{DoxyCode}
+
+
+\label{config_8h_doc-typedef-members}
+\Hypertarget{config_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{config_8h_a049eb3a9834b6686283ada91d406b499}\index{config.h@{config.h}!stack\_data@{stack\_data}}
+\index{stack\_data@{stack\_data}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{stack\_data}{stack\_data}}
+{\footnotesize\ttfamily \label{config_8h_a049eb3a9834b6686283ada91d406b499} 
+typedef int \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}}}
+

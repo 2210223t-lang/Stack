@@ -1,0 +1,37 @@
+\doxysection{utility/\+hash.h File Reference}
+\hypertarget{hash_8h}{}\label{hash_8h}\index{utility/hash.h@{utility/hash.h}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include "{}../\+config.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{hash_8h_ac41e92fbaf3c44c269ac045af9ec3f01}{Hash\+\_\+\+Calc}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Hashs stk variable with one of algorithms. \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{hash_8h_a2b9c0a0657775797aff572259df065b0}{hash\+\_\+djb2}} (unsigned char \texorpdfstring{$\ast$}{*}str, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Standard djb2 hashing function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{hash_8h_doc-func-members}
+\Hypertarget{hash_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{hash_8h_ac41e92fbaf3c44c269ac045af9ec3f01}\index{hash.h@{hash.h}!Hash\_Calc@{Hash\_Calc}}
+\index{Hash\_Calc@{Hash\_Calc}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{Hash\_Calc()}{Hash\_Calc()}}
+{\footnotesize\ttfamily \label{hash_8h_ac41e92fbaf3c44c269ac045af9ec3f01} 
+uint64\+\_\+t Hash\+\_\+\+Calc (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Hashs stk variable with one of algorithms. 
+
+\Hypertarget{hash_8h_a2b9c0a0657775797aff572259df065b0}\index{hash.h@{hash.h}!hash\_djb2@{hash\_djb2}}
+\index{hash\_djb2@{hash\_djb2}!hash.h@{hash.h}}
+\doxysubsubsection{\texorpdfstring{hash\_djb2()}{hash\_djb2()}}
+{\footnotesize\ttfamily \label{hash_8h_a2b9c0a0657775797aff572259df065b0} 
+uint64\+\_\+t hash\+\_\+djb2 (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Standard djb2 hashing function. 
+

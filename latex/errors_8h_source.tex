@@ -1,0 +1,46 @@
+\doxysection{errors.\+h}
+\hypertarget{errors_8h_source}{}\label{errors_8h_source}\index{utility/errors.h@{utility/errors.h}}
+\doxymbox{\hyperlink{errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{config_8h}{../config.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{enum}\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c}{Success}}\ =\ 0,}
+\DoxyCodeLine{00008\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a}{NULLPTR}}\ =\ 411,}
+\DoxyCodeLine{00009\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5ab4c680e2046e128008b8a4bb5e2a59}{STACK\_OVERFLOW}}\ =\ 412,}
+\DoxyCodeLine{00010\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba22798b19908192b86a97e57b1b1a18ce}{INCORRECT\_DIMENSIONS}}\ =\ 413,}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba53f5014241f432309d5c42c408ed5482}{UNFORESEEN\_TYPE}}\ =\ 414,}
+\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5df46311c6c4596bbe13ef4027558612}{UNIPRINT\_FAILURE}}\ =\ 415,}
+\DoxyCodeLine{00013\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbae7286c0c349d7fcab6d4ec975c4b88cc}{NOT\_NULL\_INIT}}\ =\ 416,}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabff257a82387e92a140e92f77abb55ab}{DATA\_SHRINKAGE}}\ =\ 417,}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbacc9002da8e8bd756048ba1975b9a53a3}{STACK\_UNDERFLOW}}\ =\ 418,}
+\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbad06b47eba75fa718e9c3422a9ccf58fe}{MEMORY\_LACK}}\ =\ 419,}
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabe9cdfa10b33b55dcb85b9fe67c4558b}{CANARY\_FAULT}}\ =\ 420,}
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc}{HASH\_MISMATCH}}\ =\ 421,}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6}{NotNull}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_a6388fff7f36da786af1c878770734246}{UnfType}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4}{MemoryLack}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \doxymbox{\hyperlink{structstack}{stack}}*\ backup\_stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3}{StackUnderflw}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{errors_8h_adf6caf2cac848edf21ddd3e1dd65015c}{incorrect\_dimension}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95}{null\_pointer}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_af3e9aa7a8beac5a70669c275148c05f6}{stack\_overflow}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_a6697f96f66bd9a237953ded3c49e3a14}{pyrrhuloxia\_check}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242}{IncorrectD}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{_errors_8cpp_aae637b622d08821181b8d2dd700687a9}{Hash\_Mismatch}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\ );}
+
+\end{DoxyCode}

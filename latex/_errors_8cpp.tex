@@ -1,0 +1,134 @@
+\doxysection{utility/\+\+Errors.cpp File Reference}
+\hypertarget{_errors_8cpp}{}\label{_errors_8cpp}\index{utility/Errors.cpp@{utility/Errors.cpp}}
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include $<$malloc/\+malloc.\+h$>$}\newline
+{\ttfamily \+\#include "{}colours.\+h"{}}\newline
+{\ttfamily \+\#include "{}errors.\+h"{}}\newline
+{\ttfamily \+\#include "{}log.\+h"{}}\newline
+{\ttfamily \+\#include "{}Utility.\+h"{}}\newline
+{\ttfamily \+\#include "{}hash.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6}{Not\+Null}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if user is trying to initialized not-\/null variable. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_a6388fff7f36da786af1c878770734246}{Unf\+Type}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if user defined correct variable type. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4}{Memory\+Lack}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, \doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}backup\+\_\+stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3}{Stack\+Underflw}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242}{IncorrectD}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks size \& capacity \texorpdfstring{$>$}{>} 0. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95}{null\+\_\+pointer}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks stk pointer correctness. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_af3e9aa7a8beac5a70669c275148c05f6}{stack\+\_\+overflow}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks size \texorpdfstring{$<$}{<} capacity. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_a6697f96f66bd9a237953ded3c49e3a14}{pyrrhuloxia\+\_\+check}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks canaries status. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{_errors_8cpp_aae637b622d08821181b8d2dd700687a9}{Hash\+\_\+\+Mismatch}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{_errors_8cpp_doc-func-members}
+\Hypertarget{_errors_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_errors_8cpp_aae637b622d08821181b8d2dd700687a9}\index{Errors.cpp@{Errors.cpp}!Hash\_Mismatch@{Hash\_Mismatch}}
+\index{Hash\_Mismatch@{Hash\_Mismatch}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{Hash\_Mismatch()}{Hash\_Mismatch()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_aae637b622d08821181b8d2dd700687a9} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Hash\+\_\+\+Mismatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks hash. 
+
+\Hypertarget{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242}\index{Errors.cpp@{Errors.cpp}!IncorrectD@{IncorrectD}}
+\index{IncorrectD@{IncorrectD}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{IncorrectD()}{IncorrectD()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} IncorrectD (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks size \& capacity \texorpdfstring{$>$}{>} 0. 
+
+stk-\/\texorpdfstring{$>$}{>}data size + canaries sizes\Hypertarget{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4}\index{Errors.cpp@{Errors.cpp}!MemoryLack@{MemoryLack}}
+\index{MemoryLack@{MemoryLack}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{MemoryLack()}{MemoryLack()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Memory\+Lack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{backup\+\_\+stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em stk} & stack to check\\
+\hline
+\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6}\index{Errors.cpp@{Errors.cpp}!NotNull@{NotNull}}
+\index{NotNull@{NotNull}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{NotNull()}{NotNull()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Not\+Null (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if user is trying to initialized not-\/null variable. 
+
+Repo count on using stk\+\_\+destr function \Hypertarget{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95}\index{Errors.cpp@{Errors.cpp}!null\_pointer@{null\_pointer}}
+\index{null\_pointer@{null\_pointer}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{null\_pointer()}{null\_pointer()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} null\+\_\+pointer (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks stk pointer correctness. 
+
+\Hypertarget{_errors_8cpp_a6697f96f66bd9a237953ded3c49e3a14}\index{Errors.cpp@{Errors.cpp}!pyrrhuloxia\_check@{pyrrhuloxia\_check}}
+\index{pyrrhuloxia\_check@{pyrrhuloxia\_check}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{pyrrhuloxia\_check()}{pyrrhuloxia\_check()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_a6697f96f66bd9a237953ded3c49e3a14} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} pyrrhuloxia\+\_\+check (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks canaries status. 
+
+\Hypertarget{_errors_8cpp_af3e9aa7a8beac5a70669c275148c05f6}\index{Errors.cpp@{Errors.cpp}!stack\_overflow@{stack\_overflow}}
+\index{stack\_overflow@{stack\_overflow}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{stack\_overflow()}{stack\_overflow()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_af3e9aa7a8beac5a70669c275148c05f6} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} stack\+\_\+overflow (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks size \texorpdfstring{$<$}{<} capacity. 
+
+\Hypertarget{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3}\index{Errors.cpp@{Errors.cpp}!StackUnderflw@{StackUnderflw}}
+\index{StackUnderflw@{StackUnderflw}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{StackUnderflw()}{StackUnderflw()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Stack\+Underflw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. 
+
+\Hypertarget{_errors_8cpp_a6388fff7f36da786af1c878770734246}\index{Errors.cpp@{Errors.cpp}!UnfType@{UnfType}}
+\index{UnfType@{UnfType}!Errors.cpp@{Errors.cpp}}
+\doxysubsubsection{\texorpdfstring{UnfType()}{UnfType()}}
+{\footnotesize\ttfamily \label{_errors_8cpp_a6388fff7f36da786af1c878770734246} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Unf\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if user defined correct variable type. 
+

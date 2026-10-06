@@ -1,0 +1,166 @@
+\doxysection{utility/\+\+Utility.h File Reference}
+\hypertarget{_utility_8h}{}\label{_utility_8h}\index{utility/Utility.h@{utility/Utility.h}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include "{}../\+stack.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{_utility_8h_ad05d2f1b67cda860903cecd9f21b6b9f}{RT}}~fprintf( stderr, "{}\textbackslash{}e\+[0;95m RTRTRTRTRTRT!!!!!\textbackslash{}n\textbackslash{}e\+[0m"{} );
+\item 
+\+\#define \doxymbox{\hyperlink{_utility_8h_acb7eb0dddb750799ea0d5a51369f130d}{Get\+Type}}(variable)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32b}{TYPES}} \{ \newline
+\doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba6ce26a62afab55d7606ad4e92428b30c}{UNKNOWN}} = 0
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bad8f5071d56427c19bf1e65635e48a4fe}{FLOAT\+\_\+S}} = 1
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9}{DOUBLE\+\_\+S}} = 2
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32babdf1e2d0d3a5c12d7fa049b21f6429a9}{STRING\+\_\+S}} = 3
+, \newline
+\doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec}{INT\+\_\+S}} = 4
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9}{LONG\+\_\+\+LONG\+\_\+S}} = 5
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32baf62f53b9963554bd91d6709184cf9165}{UINT64\+\_\+S}} = 6
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bac5b154d63382a3aa1509428232794b28}{CHAR\+\_\+S}} = 7
+, \newline
+\doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba06e50ac994a4fcce9cf3e108eb769304}{SHORT\+\_\+S}} = 8
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba3cdce5d8fd3eb4d5c1ae9c6fa444dbd0}{UINT32\+\_\+S}} = 9
+, \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badf12a3bb6ef2519a514711c2c7b1d59c}{UINT16\+\_\+S}} = 10
+ \}
+\begin{DoxyCompactList}\small\item\em All expected types of \doxylink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{_utility_8h_a21db0901e0cd028ff1aa299091c20a8f}{puts\+\_\+debug}} (const char \texorpdfstring{$\ast$}{*}a, FILE \texorpdfstring{$\ast$}{*}ostream)
+\item 
+int \doxymbox{\hyperlink{_utility_8h_a8c7bf18058e6ffcc6331384e04959b14}{Uni\+Print}} (\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Universal printlg for every types of \doxylink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{_utility_8h_doc-define-members}
+\Hypertarget{_utility_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_utility_8h_acb7eb0dddb750799ea0d5a51369f130d}\index{Utility.h@{Utility.h}!GetType@{GetType}}
+\index{GetType@{GetType}!Utility.h@{Utility.h}}
+\doxysubsubsection{\texorpdfstring{GetType}{GetType}}
+{\footnotesize\ttfamily \label{_utility_8h_acb7eb0dddb750799ea0d5a51369f130d} 
+\+\#define Get\+Type(\begin{DoxyParamCaption}\item[{}]{variable}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_Generic(\ variable,\ \textcolor{keywordtype}{float}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bad8f5071d56427c19bf1e65635e48a4fe}{FLOAT\_S}},\ \textcolor{keywordtype}{double}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9}{DOUBLE\_S}},\ \textcolor{keywordtype}{char}**\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32babdf1e2d0d3a5c12d7fa049b21f6429a9}{STRING\_S}},\(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{int}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec}{INT\_S}},\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9}{LONG\_LONG\_S}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32baf62f53b9963554bd91d6709184cf9165}{UINT64\_S}},\(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{char}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bac5b154d63382a3aa1509428232794b28}{CHAR\_S}},\ \textcolor{keywordtype}{short}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba06e50ac994a4fcce9cf3e108eb769304}{SHORT\_S}},\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badf12a3bb6ef2519a514711c2c7b1d59c}{UINT16\_S}},\(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba3cdce5d8fd3eb4d5c1ae9c6fa444dbd0}{UINT32\_S}},\ \textcolor{keywordflow}{default}\ :\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba6ce26a62afab55d7606ad4e92428b30c}{UNKNOWN}}\ )}
+
+\end{DoxyCode}
+\Hypertarget{_utility_8h_ad05d2f1b67cda860903cecd9f21b6b9f}\index{Utility.h@{Utility.h}!RT@{RT}}
+\index{RT@{RT}!Utility.h@{Utility.h}}
+\doxysubsubsection{\texorpdfstring{RT}{RT}}
+{\footnotesize\ttfamily \label{_utility_8h_ad05d2f1b67cda860903cecd9f21b6b9f} 
+\+\#define RT~fprintf( stderr, "{}\textbackslash{}e\+[0;95m RTRTRTRTRTRT!!!!!\textbackslash{}n\textbackslash{}e\+[0m"{} );}
+
+
+
+\label{_utility_8h_doc-enum-members}
+\Hypertarget{_utility_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32b}\index{Utility.h@{Utility.h}!TYPES@{TYPES}}
+\index{TYPES@{TYPES}!Utility.h@{Utility.h}}
+\doxysubsubsection{\texorpdfstring{TYPES}{TYPES}}
+{\footnotesize\ttfamily \label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32b} 
+enum \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32b}{TYPES}}}
+
+
+
+All expected types of \doxylink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!UNKNOWN@{UNKNOWN}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba6ce26a62afab55d7606ad4e92428b30c}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba6ce26a62afab55d7606ad4e92428b30c} 
+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT\_S@{FLOAT\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!FLOAT\_S@{FLOAT\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bad8f5071d56427c19bf1e65635e48a4fe}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bad8f5071d56427c19bf1e65635e48a4fe} 
+FLOAT\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE\_S@{DOUBLE\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!DOUBLE\_S@{DOUBLE\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9} 
+DOUBLE\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING\_S@{STRING\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!STRING\_S@{STRING\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32babdf1e2d0d3a5c12d7fa049b21f6429a9}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32babdf1e2d0d3a5c12d7fa049b21f6429a9} 
+STRING\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT\_S@{INT\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!INT\_S@{INT\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec} 
+INT\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LONG\_LONG\_S@{LONG\_LONG\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!LONG\_LONG\_S@{LONG\_LONG\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9} 
+LONG\+\_\+\+LONG\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT64\_S@{UINT64\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!UINT64\_S@{UINT64\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32baf62f53b9963554bd91d6709184cf9165}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32baf62f53b9963554bd91d6709184cf9165} 
+UINT64\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHAR\_S@{CHAR\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!CHAR\_S@{CHAR\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bac5b154d63382a3aa1509428232794b28}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bac5b154d63382a3aa1509428232794b28} 
+CHAR\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHORT\_S@{SHORT\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!SHORT\_S@{SHORT\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba06e50ac994a4fcce9cf3e108eb769304}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba06e50ac994a4fcce9cf3e108eb769304} 
+SHORT\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT32\_S@{UINT32\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!UINT32\_S@{UINT32\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba3cdce5d8fd3eb4d5c1ae9c6fa444dbd0}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba3cdce5d8fd3eb4d5c1ae9c6fa444dbd0} 
+UINT32\+\_\+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT16\_S@{UINT16\_S}!Utility.h@{Utility.h}}
+\index{Utility.h@{Utility.h}!UINT16\_S@{UINT16\_S}}
+}\Hypertarget{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badf12a3bb6ef2519a514711c2c7b1d59c}\label{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badf12a3bb6ef2519a514711c2c7b1d59c} 
+UINT16\+\_\+S&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{_utility_8h_doc-func-members}
+\Hypertarget{_utility_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_utility_8h_a21db0901e0cd028ff1aa299091c20a8f}\index{Utility.h@{Utility.h}!puts\_debug@{puts\_debug}}
+\index{puts\_debug@{puts\_debug}!Utility.h@{Utility.h}}
+\doxysubsubsection{\texorpdfstring{puts\_debug()}{puts\_debug()}}
+{\footnotesize\ttfamily \label{_utility_8h_a21db0901e0cd028ff1aa299091c20a8f} 
+void puts\+\_\+debug (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{FILE \texorpdfstring{$\ast$}{*}}]{ostream}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_utility_8h_a8c7bf18058e6ffcc6331384e04959b14}\index{Utility.h@{Utility.h}!UniPrint@{UniPrint}}
+\index{UniPrint@{UniPrint}!Utility.h@{Utility.h}}
+\doxysubsubsection{\texorpdfstring{UniPrint()}{UniPrint()}}
+{\footnotesize\ttfamily \label{_utility_8h_a8c7bf18058e6ffcc6331384e04959b14} 
+int Uni\+Print (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Universal printlg for every types of \doxylink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\+\_\+data}. 
+

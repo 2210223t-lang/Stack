@@ -1,0 +1,37 @@
+\doxysection{Utility.\+h}
+\hypertarget{_utility_8h_source}{}\label{_utility_8h_source}\index{utility/Utility.h@{utility/Utility.h}}
+\doxymbox{\hyperlink{_utility_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{stack_8h}{../stack.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ \$RT\ fprintf(\ stderr,\ "{}\(\backslash\)e[0;95m\ RTRTRTRTRTRT!!!!!\(\backslash\)n\(\backslash\)e[0m"{}\ );}\textcolor{comment}{//<\ Useful\ debugging\ macro}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_utility_8h_a21db0901e0cd028ff1aa299091c20a8f}{puts\_debug}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ a,\ FILE*\ ostream\ );\textcolor{comment}{//<\ Debugging\ puts}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum}\ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32b}{TYPES}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba6ce26a62afab55d7606ad4e92428b30c}{UNKNOWN}}\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bad8f5071d56427c19bf1e65635e48a4fe}{FLOAT\_S}}\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9}{DOUBLE\_S}}\ \ \ \ =\ 2,}
+\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32babdf1e2d0d3a5c12d7fa049b21f6429a9}{STRING\_S}}\ \ \ \ =\ 3,}
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec}{INT\_S}}\ \ \ \ \ \ \ =\ 4,}
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9}{LONG\_LONG\_S}}\ =\ 5,}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32baf62f53b9963554bd91d6709184cf9165}{UINT64\_S}}\ \ \ \ =\ 6,}
+\DoxyCodeLine{00020\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32bac5b154d63382a3aa1509428232794b28}{CHAR\_S}}\ \ \ \ \ \ =\ 7,}
+\DoxyCodeLine{00021\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba06e50ac994a4fcce9cf3e108eb769304}{SHORT\_S}}\ \ \ \ \ =\ 8,}
+\DoxyCodeLine{00022\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32ba3cdce5d8fd3eb4d5c1ae9c6fa444dbd0}{UINT32\_S}}\ \ \ \ =\ 9,}
+\DoxyCodeLine{00023\ \ \ \ \ \doxymbox{\hyperlink{_utility_8h_aacb79576e5cf053ee9c93cb9d665e32badf12a3bb6ef2519a514711c2c7b1d59c}{UINT16\_S}}\ \ \ \ =\ 10,}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//TODO\ delete\ generic}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ GetType(\ variable\ )\ \_Generic(\ variable,\ float*\ :\ FLOAT\_S,\ double*\ :\ DOUBLE\_S,\ char**\ :\ STRING\_S,\(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int*\ :\ INT\_S,\ long\ long*\ :\ LONG\_LONG\_S,\ unsigned\ long\ long*\ :\ UINT64\_S,\(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char*\ :\ CHAR\_S,\ short*\ :\ SHORT\_S,\ unsigned\ short*\ :\ UINT16\_S,\(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ unsigned\ int*\ :\ UINT32\_S,\ default\ :\ UNKNOWN\ )}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{_utility_8cpp_a03457161a46dadc265dd32875531cd0a}{UniPrint}}(\ \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\_data}}*\ stk\ );}
+
+\end{DoxyCode}

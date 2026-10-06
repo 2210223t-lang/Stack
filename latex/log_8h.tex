@@ -1,0 +1,99 @@
+\doxysection{utility/\+log.h File Reference}
+\hypertarget{log_8h}{}\label{log_8h}\index{utility/log.h@{utility/log.h}}
+{\ttfamily \+\#include "{}../\+stack.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{log_8h_a16c92a2c047aec4c07ebf308e579621f}{logger\+\_\+name}}~"{}log"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{log_8h_aafe8a63b3b1397c308ff69a6c989ba8a}{logger\+\_\+open}} ()
+\begin{DoxyCompactList}\small\item\em Changes output stream to a lo -\/ file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{log_8h_a41951198534167176e0b62e16bba2ca7}{printlg}} (const char \texorpdfstring{$\ast$}{*}text,...)
+\begin{DoxyCompactList}\small\item\em fprintf( logger\+\_\+stream ) realization \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{log_8h_a59c77d233157db1c24d6553a2567e442}{logger\+\_\+close}} (void)
+\begin{DoxyCompactList}\small\item\em Closes logger\+\_\+stream and sets it to stderr. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{log_8h_a9f31431afbce90b052a07268d428173a}{stack\+\_\+status}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Prints stack status ( if\textquotesingle{}s value ) into logger\+\_\+stream. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{log_8h_aa1dba02528ebe1530c9f124056d92ae6}{print\+\_\+metadata}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Prints stack variable metadata into logger\+\_\+stream. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{log_8h_aee88b072464cef64924a393c3a668585}{putslg\+\_\+debug}} (const char \texorpdfstring{$\ast$}{*}a)
+\begin{DoxyCompactList}\small\item\em Debugging puts function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{log_8h_doc-define-members}
+\Hypertarget{log_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{log_8h_a16c92a2c047aec4c07ebf308e579621f}\index{log.h@{log.h}!logger\_name@{logger\_name}}
+\index{logger\_name@{logger\_name}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{logger\_name}{logger\_name}}
+{\footnotesize\ttfamily \label{log_8h_a16c92a2c047aec4c07ebf308e579621f} 
+\+\#define logger\+\_\+name~"{}log"{}}
+
+
+
+\label{log_8h_doc-func-members}
+\Hypertarget{log_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{log_8h_a59c77d233157db1c24d6553a2567e442}\index{log.h@{log.h}!logger\_close@{logger\_close}}
+\index{logger\_close@{logger\_close}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{logger\_close()}{logger\_close()}}
+{\footnotesize\ttfamily \label{log_8h_a59c77d233157db1c24d6553a2567e442} 
+void logger\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Closes logger\+\_\+stream and sets it to stderr. 
+
+\Hypertarget{log_8h_aafe8a63b3b1397c308ff69a6c989ba8a}\index{log.h@{log.h}!logger\_open@{logger\_open}}
+\index{logger\_open@{logger\_open}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{logger\_open()}{logger\_open()}}
+{\footnotesize\ttfamily \label{log_8h_aafe8a63b3b1397c308ff69a6c989ba8a} 
+int logger\+\_\+open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Changes output stream to a lo -\/ file. 
+
+\Hypertarget{log_8h_aa1dba02528ebe1530c9f124056d92ae6}\index{log.h@{log.h}!print\_metadata@{print\_metadata}}
+\index{print\_metadata@{print\_metadata}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{print\_metadata()}{print\_metadata()}}
+{\footnotesize\ttfamily \label{log_8h_aa1dba02528ebe1530c9f124056d92ae6} 
+void print\+\_\+metadata (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Prints stack variable metadata into logger\+\_\+stream. 
+
+\Hypertarget{log_8h_a41951198534167176e0b62e16bba2ca7}\index{log.h@{log.h}!printlg@{printlg}}
+\index{printlg@{printlg}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{printlg()}{printlg()}}
+{\footnotesize\ttfamily \label{log_8h_a41951198534167176e0b62e16bba2ca7} 
+void printlg (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+
+
+fprintf( logger\+\_\+stream ) realization 
+
+\Hypertarget{log_8h_aee88b072464cef64924a393c3a668585}\index{log.h@{log.h}!putslg\_debug@{putslg\_debug}}
+\index{putslg\_debug@{putslg\_debug}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{putslg\_debug()}{putslg\_debug()}}
+{\footnotesize\ttfamily \label{log_8h_aee88b072464cef64924a393c3a668585} 
+void putslg\+\_\+debug (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Debugging puts function. 
+
+\Hypertarget{log_8h_a9f31431afbce90b052a07268d428173a}\index{log.h@{log.h}!stack\_status@{stack\_status}}
+\index{stack\_status@{stack\_status}!log.h@{log.h}}
+\doxysubsubsection{\texorpdfstring{stack\_status()}{stack\_status()}}
+{\footnotesize\ttfamily \label{log_8h_a9f31431afbce90b052a07268d428173a} 
+void stack\+\_\+status (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Prints stack status ( if\textquotesingle{}s value ) into logger\+\_\+stream. 
+

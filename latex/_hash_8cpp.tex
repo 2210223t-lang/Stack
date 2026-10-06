@@ -1,0 +1,39 @@
+\doxysection{utility/\+\+Hash.cpp File Reference}
+\hypertarget{_hash_8cpp}{}\label{_hash_8cpp}\index{utility/Hash.cpp@{utility/Hash.cpp}}
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$cstdint$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$assert.\+h$>$}\newline
+{\ttfamily \+\#include "{}../\+config.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{_hash_8cpp_a2b9c0a0657775797aff572259df065b0}{hash\+\_\+djb2}} (unsigned char \texorpdfstring{$\ast$}{*}str, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Standard djb2 hashing function. \end{DoxyCompactList}\item 
+uint64\+\_\+t \doxymbox{\hyperlink{_hash_8cpp_ac41e92fbaf3c44c269ac045af9ec3f01}{Hash\+\_\+\+Calc}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk)
+\begin{DoxyCompactList}\small\item\em Hashs stk variable with one of algorithms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{_hash_8cpp_doc-func-members}
+\Hypertarget{_hash_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_hash_8cpp_ac41e92fbaf3c44c269ac045af9ec3f01}\index{Hash.cpp@{Hash.cpp}!Hash\_Calc@{Hash\_Calc}}
+\index{Hash\_Calc@{Hash\_Calc}!Hash.cpp@{Hash.cpp}}
+\doxysubsubsection{\texorpdfstring{Hash\_Calc()}{Hash\_Calc()}}
+{\footnotesize\ttfamily \label{_hash_8cpp_ac41e92fbaf3c44c269ac045af9ec3f01} 
+uint64\+\_\+t Hash\+\_\+\+Calc (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{}\end{DoxyParamCaption})}
+
+
+
+Hashs stk variable with one of algorithms. 
+
+\Hypertarget{_hash_8cpp_a2b9c0a0657775797aff572259df065b0}\index{Hash.cpp@{Hash.cpp}!hash\_djb2@{hash\_djb2}}
+\index{hash\_djb2@{hash\_djb2}!Hash.cpp@{Hash.cpp}}
+\doxysubsubsection{\texorpdfstring{hash\_djb2()}{hash\_djb2()}}
+{\footnotesize\ttfamily \label{_hash_8cpp_a2b9c0a0657775797aff572259df065b0} 
+uint64\+\_\+t hash\+\_\+djb2 (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Standard djb2 hashing function. 
+

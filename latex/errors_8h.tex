@@ -1,0 +1,243 @@
+\doxysection{utility/\+errors.h File Reference}
+\hypertarget{errors_8h}{}\label{errors_8h}\index{utility/errors.h@{utility/errors.h}}
+{\ttfamily \+\#include "{}../\+config.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \{ \newline
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c}{Success}} = 0
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a}{NULLPTR}} = 411
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5ab4c680e2046e128008b8a4bb5e2a59}{STACK\+\_\+\+OVERFLOW}} = 412
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba22798b19908192b86a97e57b1b1a18ce}{INCORRECT\+\_\+\+DIMENSIONS}} = 413
+, \newline
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba53f5014241f432309d5c42c408ed5482}{UNFORESEEN\+\_\+\+TYPE}} = 414
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5df46311c6c4596bbe13ef4027558612}{UNIPRINT\+\_\+\+FAILURE}} = 415
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbae7286c0c349d7fcab6d4ec975c4b88cc}{NOT\+\_\+\+NULL\+\_\+\+INIT}} = 416
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabff257a82387e92a140e92f77abb55ab}{DATA\+\_\+\+SHRINKAGE}} = 417
+, \newline
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbacc9002da8e8bd756048ba1975b9a53a3}{STACK\+\_\+\+UNDERFLOW}} = 418
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbad06b47eba75fa718e9c3422a9ccf58fe}{MEMORY\+\_\+\+LACK}} = 419
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabe9cdfa10b33b55dcb85b9fe67c4558b}{CANARY\+\_\+\+FAULT}} = 420
+, \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc}{HASH\+\_\+\+MISMATCH}} = 421
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_a6e9ec6d2f69fdcdc65588d34b71c5fe6}{Not\+Null}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if user is trying to initialized not-\/null variable. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_a6388fff7f36da786af1c878770734246}{Unf\+Type}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if user defined correct variable type. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_ad7e800df0c11d02e6aab9ce398aef4c4}{Memory\+Lack}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, \doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}backup\+\_\+stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_ac6fdc686b41497b623f5dbc9cb7159c3}{Stack\+Underflw}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_adf6caf2cac848edf21ddd3e1dd65015c}{incorrect\+\_\+dimension}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks dimensions correctness. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_ae0927f364fda11506ac0774de5d8cf95}{null\+\_\+pointer}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks stk pointer correctness. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_af3e9aa7a8beac5a70669c275148c05f6}{stack\+\_\+overflow}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks size \texorpdfstring{$<$}{<} capacity. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_a6697f96f66bd9a237953ded3c49e3a14}{pyrrhuloxia\+\_\+check}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks canaries status. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_a90efd9aefe61694d853e2e1c048f8242}{IncorrectD}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks size \& capacity \texorpdfstring{$>$}{>} 0. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} \doxymbox{\hyperlink{errors_8h_aae637b622d08821181b8d2dd700687a9}{Hash\+\_\+\+Mismatch}} (\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}stk, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line)
+\begin{DoxyCompactList}\small\item\em Checks hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{errors_8h_doc-enum-members}
+\Hypertarget{errors_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}\index{errors.h@{errors.h}!StkError@{StkError}}
+\index{StkError@{StkError}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{StkError}{StkError}}
+{\footnotesize\ttfamily \label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb} 
+enum \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!Success@{Success}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c} 
+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NULLPTR@{NULLPTR}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!NULLPTR@{NULLPTR}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a} 
+NULLPTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STACK\_OVERFLOW@{STACK\_OVERFLOW}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!STACK\_OVERFLOW@{STACK\_OVERFLOW}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5ab4c680e2046e128008b8a4bb5e2a59}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5ab4c680e2046e128008b8a4bb5e2a59} 
+STACK\+\_\+\+OVERFLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INCORRECT\_DIMENSIONS@{INCORRECT\_DIMENSIONS}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!INCORRECT\_DIMENSIONS@{INCORRECT\_DIMENSIONS}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba22798b19908192b86a97e57b1b1a18ce}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba22798b19908192b86a97e57b1b1a18ce} 
+INCORRECT\+\_\+\+DIMENSIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNFORESEEN\_TYPE@{UNFORESEEN\_TYPE}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!UNFORESEEN\_TYPE@{UNFORESEEN\_TYPE}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba53f5014241f432309d5c42c408ed5482}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba53f5014241f432309d5c42c408ed5482} 
+UNFORESEEN\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNIPRINT\_FAILURE@{UNIPRINT\_FAILURE}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!UNIPRINT\_FAILURE@{UNIPRINT\_FAILURE}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5df46311c6c4596bbe13ef4027558612}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccba5df46311c6c4596bbe13ef4027558612} 
+UNIPRINT\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_NULL\_INIT@{NOT\_NULL\_INIT}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!NOT\_NULL\_INIT@{NOT\_NULL\_INIT}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbae7286c0c349d7fcab6d4ec975c4b88cc}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbae7286c0c349d7fcab6d4ec975c4b88cc} 
+NOT\+\_\+\+NULL\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_SHRINKAGE@{DATA\_SHRINKAGE}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!DATA\_SHRINKAGE@{DATA\_SHRINKAGE}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabff257a82387e92a140e92f77abb55ab}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabff257a82387e92a140e92f77abb55ab} 
+DATA\+\_\+\+SHRINKAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STACK\_UNDERFLOW@{STACK\_UNDERFLOW}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!STACK\_UNDERFLOW@{STACK\_UNDERFLOW}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbacc9002da8e8bd756048ba1975b9a53a3}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbacc9002da8e8bd756048ba1975b9a53a3} 
+STACK\+\_\+\+UNDERFLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MEMORY\_LACK@{MEMORY\_LACK}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!MEMORY\_LACK@{MEMORY\_LACK}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbad06b47eba75fa718e9c3422a9ccf58fe}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbad06b47eba75fa718e9c3422a9ccf58fe} 
+MEMORY\+\_\+\+LACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CANARY\_FAULT@{CANARY\_FAULT}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!CANARY\_FAULT@{CANARY\_FAULT}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabe9cdfa10b33b55dcb85b9fe67c4558b}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabe9cdfa10b33b55dcb85b9fe67c4558b} 
+CANARY\+\_\+\+FAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HASH\_MISMATCH@{HASH\_MISMATCH}!errors.h@{errors.h}}
+\index{errors.h@{errors.h}!HASH\_MISMATCH@{HASH\_MISMATCH}}
+}\Hypertarget{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc}\label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc} 
+HASH\+\_\+\+MISMATCH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{errors_8h_doc-func-members}
+\Hypertarget{errors_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{errors_8h_aae637b622d08821181b8d2dd700687a9}\index{errors.h@{errors.h}!Hash\_Mismatch@{Hash\_Mismatch}}
+\index{Hash\_Mismatch@{Hash\_Mismatch}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{Hash\_Mismatch()}{Hash\_Mismatch()}}
+{\footnotesize\ttfamily \label{errors_8h_aae637b622d08821181b8d2dd700687a9} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Hash\+\_\+\+Mismatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks hash. 
+
+\Hypertarget{errors_8h_adf6caf2cac848edf21ddd3e1dd65015c}\index{errors.h@{errors.h}!incorrect\_dimension@{incorrect\_dimension}}
+\index{incorrect\_dimension@{incorrect\_dimension}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{incorrect\_dimension()}{incorrect\_dimension()}}
+{\footnotesize\ttfamily \label{errors_8h_adf6caf2cac848edf21ddd3e1dd65015c} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} incorrect\+\_\+dimension (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks dimensions correctness. 
+
+\Hypertarget{errors_8h_a90efd9aefe61694d853e2e1c048f8242}\index{errors.h@{errors.h}!IncorrectD@{IncorrectD}}
+\index{IncorrectD@{IncorrectD}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{IncorrectD()}{IncorrectD()}}
+{\footnotesize\ttfamily \label{errors_8h_a90efd9aefe61694d853e2e1c048f8242} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} IncorrectD (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks size \& capacity \texorpdfstring{$>$}{>} 0. 
+
+stk-\/\texorpdfstring{$>$}{>}data size + canaries sizes\Hypertarget{errors_8h_ad7e800df0c11d02e6aab9ce398aef4c4}\index{errors.h@{errors.h}!MemoryLack@{MemoryLack}}
+\index{MemoryLack@{MemoryLack}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{MemoryLack()}{MemoryLack()}}
+{\footnotesize\ttfamily \label{errors_8h_ad7e800df0c11d02e6aab9ce398aef4c4} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Memory\+Lack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{backup\+\_\+stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em stk} & stack to check\\
+\hline
+\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup \\
+\hline
+\end{DoxyParams}
+\Hypertarget{errors_8h_a6e9ec6d2f69fdcdc65588d34b71c5fe6}\index{errors.h@{errors.h}!NotNull@{NotNull}}
+\index{NotNull@{NotNull}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{NotNull()}{NotNull()}}
+{\footnotesize\ttfamily \label{errors_8h_a6e9ec6d2f69fdcdc65588d34b71c5fe6} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Not\+Null (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if user is trying to initialized not-\/null variable. 
+
+Repo count on using stk\+\_\+destr function \Hypertarget{errors_8h_ae0927f364fda11506ac0774de5d8cf95}\index{errors.h@{errors.h}!null\_pointer@{null\_pointer}}
+\index{null\_pointer@{null\_pointer}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{null\_pointer()}{null\_pointer()}}
+{\footnotesize\ttfamily \label{errors_8h_ae0927f364fda11506ac0774de5d8cf95} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} null\+\_\+pointer (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks stk pointer correctness. 
+
+\Hypertarget{errors_8h_a6697f96f66bd9a237953ded3c49e3a14}\index{errors.h@{errors.h}!pyrrhuloxia\_check@{pyrrhuloxia\_check}}
+\index{pyrrhuloxia\_check@{pyrrhuloxia\_check}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{pyrrhuloxia\_check()}{pyrrhuloxia\_check()}}
+{\footnotesize\ttfamily \label{errors_8h_a6697f96f66bd9a237953ded3c49e3a14} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} pyrrhuloxia\+\_\+check (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks canaries status. 
+
+\Hypertarget{errors_8h_af3e9aa7a8beac5a70669c275148c05f6}\index{errors.h@{errors.h}!stack\_overflow@{stack\_overflow}}
+\index{stack\_overflow@{stack\_overflow}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{stack\_overflow()}{stack\_overflow()}}
+{\footnotesize\ttfamily \label{errors_8h_af3e9aa7a8beac5a70669c275148c05f6} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} stack\+\_\+overflow (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks size \texorpdfstring{$<$}{<} capacity. 
+
+\Hypertarget{errors_8h_ac6fdc686b41497b623f5dbc9cb7159c3}\index{errors.h@{errors.h}!StackUnderflw@{StackUnderflw}}
+\index{StackUnderflw@{StackUnderflw}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{StackUnderflw()}{StackUnderflw()}}
+{\footnotesize\ttfamily \label{errors_8h_ac6fdc686b41497b623f5dbc9cb7159c3} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Stack\+Underflw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. 
+
+\Hypertarget{errors_8h_a6388fff7f36da786af1c878770734246}\index{errors.h@{errors.h}!UnfType@{UnfType}}
+\index{UnfType@{UnfType}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{UnfType()}{UnfType()}}
+{\footnotesize\ttfamily \label{errors_8h_a6388fff7f36da786af1c878770734246} 
+\doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}} Unf\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{function}{, }\item[{const int}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Checks if user defined correct variable type. 
+
