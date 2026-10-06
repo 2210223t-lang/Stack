@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_0',['Changing storing type',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]]
+  ['gettype_0',['GetType',['../_utility_8h.html#acb7eb0dddb750799ea0d5a51369f130d',1,'Utility.h']]]
 ];

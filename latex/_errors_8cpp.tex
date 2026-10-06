@@ -45,6 +45,9 @@
 
 Checks hash. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_a90efd9aefe61694d853e2e1c048f8242}\index{Errors.cpp@{Errors.cpp}!IncorrectD@{IncorrectD}}
 \index{IncorrectD@{IncorrectD}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{IncorrectD()}{IncorrectD()}}
@@ -55,6 +58,9 @@ Checks hash.
 
 Checks size \& capacity \texorpdfstring{$>$}{>} 0. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 stk-\/\texorpdfstring{$>$}{>}data size + canaries sizes\Hypertarget{_errors_8cpp_ad7e800df0c11d02e6aab9ce398aef4c4}\index{Errors.cpp@{Errors.cpp}!MemoryLack@{MemoryLack}}
 \index{MemoryLack@{MemoryLack}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{MemoryLack()}{MemoryLack()}}
@@ -69,9 +75,12 @@ Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly.
 \begin{DoxyParams}[1]{Parameters}
 \doxymbox{\texttt{in}}  & {\em stk} & stack to check\\
 \hline
-\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup \\
+\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_a6e9ec6d2f69fdcdc65588d34b71c5fe6}\index{Errors.cpp@{Errors.cpp}!NotNull@{NotNull}}
 \index{NotNull@{NotNull}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{NotNull()}{NotNull()}}
@@ -82,7 +91,12 @@ Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly.
 
 Checks if user is trying to initialized not-\/null variable. 
 
-Repo count on using stk\+\_\+destr function \Hypertarget{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95}\index{Errors.cpp@{Errors.cpp}!null\_pointer@{null\_pointer}}
+Repo count on using stk\+\_\+destr function
+
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
+\Hypertarget{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95}\index{Errors.cpp@{Errors.cpp}!null\_pointer@{null\_pointer}}
 \index{null\_pointer@{null\_pointer}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{null\_pointer()}{null\_pointer()}}
 {\footnotesize\ttfamily \label{_errors_8cpp_ae0927f364fda11506ac0774de5d8cf95} 
@@ -92,6 +106,9 @@ Repo count on using stk\+\_\+destr function \Hypertarget{_errors_8cpp_ae0927f364
 
 Checks stk pointer correctness. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_a6697f96f66bd9a237953ded3c49e3a14}\index{Errors.cpp@{Errors.cpp}!pyrrhuloxia\_check@{pyrrhuloxia\_check}}
 \index{pyrrhuloxia\_check@{pyrrhuloxia\_check}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{pyrrhuloxia\_check()}{pyrrhuloxia\_check()}}
@@ -102,6 +119,9 @@ Checks stk pointer correctness.
 
 Checks canaries status. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_af3e9aa7a8beac5a70669c275148c05f6}\index{Errors.cpp@{Errors.cpp}!stack\_overflow@{stack\_overflow}}
 \index{stack\_overflow@{stack\_overflow}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{stack\_overflow()}{stack\_overflow()}}
@@ -112,6 +132,9 @@ Checks canaries status.
 
 Checks size \texorpdfstring{$<$}{<} capacity. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_ac6fdc686b41497b623f5dbc9cb7159c3}\index{Errors.cpp@{Errors.cpp}!StackUnderflw@{StackUnderflw}}
 \index{StackUnderflw@{StackUnderflw}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{StackUnderflw()}{StackUnderflw()}}
@@ -122,6 +145,9 @@ Checks size \texorpdfstring{$<$}{<} capacity.
 
 Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{_errors_8cpp_a6388fff7f36da786af1c878770734246}\index{Errors.cpp@{Errors.cpp}!UnfType@{UnfType}}
 \index{UnfType@{UnfType}!Errors.cpp@{Errors.cpp}}
 \doxysubsubsection{\texorpdfstring{UnfType()}{UnfType()}}
@@ -132,3 +158,6 @@ Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0.
 
 Checks if user defined correct variable type. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}

@@ -15,7 +15,7 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \doxymbox{\hyperlink{structstack__stat}{stack\+\_\+stat}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure, which is used in desc functions to store info about current free cells in allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,7 +73,7 @@ void stack\+\_\+destr (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struc
 
 Destroys choosen stack -\/ variable. 
 
-\Hypertarget{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5}\index{stack.cpp@{stack.cpp}!stack\_destr\_desc@{stack\_destr\_desc}}
+Free stk-\/\texorpdfstring{$>$}{>}data \Hypertarget{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5}\index{stack.cpp@{stack.cpp}!stack\_destr\_desc@{stack\_destr\_desc}}
 \index{stack\_destr\_desc@{stack\_destr\_desc}!stack.cpp@{stack.cpp}}
 \doxysubsubsection{\texorpdfstring{stack\_destr\_desc()}{stack\_destr\_desc()}}
 {\footnotesize\ttfamily \label{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5} 
@@ -120,7 +120,7 @@ Pushes stack with temp variable.
 \begin{DoxyParams}[1]{Parameters}
 \doxymbox{\texttt{in}}  & {\em temp} & value to be initialized\\
 \hline
-\doxymbox{\texttt{in,out}}  & {\em stk} & where add temp \\
+\doxymbox{\texttt{in,out}}  & {\em stk} & where to add temp \\
 \hline
 \end{DoxyParams}
 \Hypertarget{stack_8cpp_a1053422d2297c6b1d5abcccbe4449df9}\index{stack.cpp@{stack.cpp}!stack\_push\_desc@{stack\_push\_desc}}
@@ -137,13 +137,13 @@ Stack\+\_\+push for desc.
 \index{StackIni@{StackIni}!stack.cpp@{stack.cpp}}
 \doxysubsubsection{\texorpdfstring{StackIni()}{StackIni()}}
 {\footnotesize\ttfamily \label{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f} 
-void Stack\+Ini (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{int capacity }]{ON\+\_\+\+DEBUG}{, const char \texorpdfstring{$\ast$}{*} varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line}\end{DoxyParamCaption})}
+void Stack\+Ini (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structstack}{stack}} \texorpdfstring{$\ast$}{*}}]{stk}{, }\item[{int capacity }]{ON\+\_\+\+DEBUG}{, const char \texorpdfstring{$\ast$}{*}varname, const char \texorpdfstring{$\ast$}{*}filename, const char \texorpdfstring{$\ast$}{*}function, const int line}\end{DoxyParamCaption})}
 
 
 
 Initializes stack variable. 
 
-Not 0, to leave space for canary\Hypertarget{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}\index{stack.cpp@{stack.cpp}!StackIniDesc@{StackIniDesc}}
+Allocates stk-\/\texorpdfstring{$>$}{>}data with capacity cells + canaries Not 0, to leave space for canary\Hypertarget{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}\index{stack.cpp@{stack.cpp}!StackIniDesc@{StackIniDesc}}
 \index{StackIniDesc@{StackIniDesc}!stack.cpp@{stack.cpp}}
 \doxysubsubsection{\texorpdfstring{StackIniDesc()}{StackIniDesc()}}
 {\footnotesize\ttfamily \label{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7} 

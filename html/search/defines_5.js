@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['incorrect_5fdimensions_0',['incorrect_dimensions',['../config_8h.html#ab87e2be7a02acfaaf33cf80c7626a2c2',1,'config.h']]]
+  ['not_5fnull_0',['not_null',['../config_8h.html#a9963f94c2f1cdba889fe415d870e2a30',1,'config.h']]]
 ];

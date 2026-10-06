@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['debugging_20mode_0',['Debugging mode',['../md__r_e_a_d_m_e.html#autotoc_md3',1,'']]],
-  ['details_1',['Details',['../md__r_e_a_d_m_e.html#autotoc_md4',1,'']]]
+  ['data_0',['data',['../structstack.html#afd6e6d7820f9ebbae19ec6fedf9ad2ac',1,'stack']]],
+  ['data_5fshrinkage_1',['DATA_SHRINKAGE',['../errors_8h.html#ad6dcd0f181a7a0e0dc0072d4f7a4fccbabff257a82387e92a140e92f77abb55ab',1,'errors.h']]],
+  ['double_5fs_2',['DOUBLE_S',['../_utility_8h.html#aacb79576e5cf053ee9c93cb9d665e32ba2521f3bc0a1e99287fbb9e94bedc4ed9',1,'Utility.h']]]
 ];

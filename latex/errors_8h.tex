@@ -20,7 +20,7 @@ enum \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Erro
 , \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbabe9cdfa10b33b55dcb85b9fe67c4558b}{CANARY\+\_\+\+FAULT}} = 420
 , \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc}{HASH\+\_\+\+MISMATCH}} = 421
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +54,10 @@ enum \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Erro
 \doxysubsubsection{\texorpdfstring{StkError}{StkError}}
 {\footnotesize\ttfamily \label{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb} 
 enum \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{Stk\+Error}}}
+
+
+
+Error codes. 
 
 \begin{DoxyEnumFields}[2]{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Success@{Success}!errors.h@{errors.h}}
@@ -144,6 +148,9 @@ HASH\+\_\+\+MISMATCH&\\
 
 Checks hash. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_adf6caf2cac848edf21ddd3e1dd65015c}\index{errors.h@{errors.h}!incorrect\_dimension@{incorrect\_dimension}}
 \index{incorrect\_dimension@{incorrect\_dimension}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{incorrect\_dimension()}{incorrect\_dimension()}}
@@ -154,6 +161,9 @@ Checks hash.
 
 Checks dimensions correctness. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_a90efd9aefe61694d853e2e1c048f8242}\index{errors.h@{errors.h}!IncorrectD@{IncorrectD}}
 \index{IncorrectD@{IncorrectD}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{IncorrectD()}{IncorrectD()}}
@@ -164,6 +174,9 @@ Checks dimensions correctness.
 
 Checks size \& capacity \texorpdfstring{$>$}{>} 0. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 stk-\/\texorpdfstring{$>$}{>}data size + canaries sizes\Hypertarget{errors_8h_ad7e800df0c11d02e6aab9ce398aef4c4}\index{errors.h@{errors.h}!MemoryLack@{MemoryLack}}
 \index{MemoryLack@{MemoryLack}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{MemoryLack()}{MemoryLack()}}
@@ -178,9 +191,12 @@ Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly.
 \begin{DoxyParams}[1]{Parameters}
 \doxymbox{\texttt{in}}  & {\em stk} & stack to check\\
 \hline
-\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup \\
+\doxymbox{\texttt{in}}  & {\em backup\+\_\+stk} & stk backup\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_a6e9ec6d2f69fdcdc65588d34b71c5fe6}\index{errors.h@{errors.h}!NotNull@{NotNull}}
 \index{NotNull@{NotNull}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{NotNull()}{NotNull()}}
@@ -191,7 +207,12 @@ Checks if stk-\/\texorpdfstring{$>$}{>}data was initialized by calloc correctly.
 
 Checks if user is trying to initialized not-\/null variable. 
 
-Repo count on using stk\+\_\+destr function \Hypertarget{errors_8h_ae0927f364fda11506ac0774de5d8cf95}\index{errors.h@{errors.h}!null\_pointer@{null\_pointer}}
+Repo count on using stk\+\_\+destr function
+
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
+\Hypertarget{errors_8h_ae0927f364fda11506ac0774de5d8cf95}\index{errors.h@{errors.h}!null\_pointer@{null\_pointer}}
 \index{null\_pointer@{null\_pointer}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{null\_pointer()}{null\_pointer()}}
 {\footnotesize\ttfamily \label{errors_8h_ae0927f364fda11506ac0774de5d8cf95} 
@@ -201,6 +222,9 @@ Repo count on using stk\+\_\+destr function \Hypertarget{errors_8h_ae0927f364fda
 
 Checks stk pointer correctness. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_a6697f96f66bd9a237953ded3c49e3a14}\index{errors.h@{errors.h}!pyrrhuloxia\_check@{pyrrhuloxia\_check}}
 \index{pyrrhuloxia\_check@{pyrrhuloxia\_check}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{pyrrhuloxia\_check()}{pyrrhuloxia\_check()}}
@@ -211,6 +235,9 @@ Checks stk pointer correctness.
 
 Checks canaries status. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_af3e9aa7a8beac5a70669c275148c05f6}\index{errors.h@{errors.h}!stack\_overflow@{stack\_overflow}}
 \index{stack\_overflow@{stack\_overflow}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{stack\_overflow()}{stack\_overflow()}}
@@ -221,6 +248,9 @@ Checks canaries status.
 
 Checks size \texorpdfstring{$<$}{<} capacity. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_ac6fdc686b41497b623f5dbc9cb7159c3}\index{errors.h@{errors.h}!StackUnderflw@{StackUnderflw}}
 \index{StackUnderflw@{StackUnderflw}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{StackUnderflw()}{StackUnderflw()}}
@@ -231,6 +261,9 @@ Checks size \texorpdfstring{$<$}{<} capacity.
 
 Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}
 \Hypertarget{errors_8h_a6388fff7f36da786af1c878770734246}\index{errors.h@{errors.h}!UnfType@{UnfType}}
 \index{UnfType@{UnfType}!errors.h@{errors.h}}
 \doxysubsubsection{\texorpdfstring{UnfType()}{UnfType()}}
@@ -241,3 +274,6 @@ Checks if stk-\/\texorpdfstring{$>$}{>}size \texorpdfstring{$<$}{<} 0.
 
 Checks if user defined correct variable type. 
 
+\begin{DoxyReturn}{Returns}
+Exit status 
+\end{DoxyReturn}

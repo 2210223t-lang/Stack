@@ -1,41 +1,41 @@
 \doxysection{stack.\+h}
-\hypertarget{stack_8h_source}{}\label{stack_8h_source}
+\hypertarget{stack_8h_source}{}\label{stack_8h_source}\doxymbox{\hyperlink{stack_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}config.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}utility/errors.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{config_8h}{config.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{errors_8h}{utility/errors.h}}"{}}}
 \DoxyCodeLine{00005\ }
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ stack\_destr(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk\ );}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a42ac4fc7cb95605f33153d89a968aeca}{stack\_destr}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk\ );}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ StackIni(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ capacity}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ON\_DEBUG(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a293baecb6ab35515e1d602b443c5de0f}{StackIni}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ capacity}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{config_8h_a1bdd7c1369b250215a080e8421d4ecf3}{ON\_DEBUG}}(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ line\ )\ );}
 \DoxyCodeLine{00024\ }
-\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ stack\_push(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ stack\_data\ temp\ );}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a2aab661a719481509de7d574c581a665}{stack\_push}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\_data}}\ temp\ );}
 \DoxyCodeLine{00033\ }
-\DoxyCodeLine{00039\ stack\_data\ stack\_pop(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk\ );}
+\DoxyCodeLine{00039\ \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\_data}}\ \doxymbox{\hyperlink{stack_8cpp_a009296971d4e260488097e876ba1d2f5}{stack\_pop}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk\ );}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ init\_info(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk1\ ON\_DEBUG(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a34cbbd58b3d3b94e8335a8cad5eb6bfc}{init\_info}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk1\ \doxymbox{\hyperlink{config_8h_a1bdd7c1369b250215a080e8421d4ecf3}{ON\_DEBUG}}(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ line\ )\ );}
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00054\ StkError\ STACK\_CHECK(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_call,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ func\_call,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\_call\ );}
+\DoxyCodeLine{00054\ \doxymbox{\hyperlink{errors_8h_ad6dcd0f181a7a0e0dc0072d4f7a4fccb}{StkError}}\ \doxymbox{\hyperlink{stack_8cpp_a2b82197191ac6fc4ef24e10abd20ea60}{STACK\_CHECK}}(\ \doxymbox{\hyperlink{structstack}{stack}}*\ stk,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file\_call,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ func\_call,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ line\_call\ );}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ StackIniDesc(\ \textcolor{keywordtype}{int}*\ desc,\ \textcolor{keywordtype}{int}\ capacity}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ON\_DEBUG(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{stack_8cpp_ac01ae1911b1704c114c25ecc24590aa7}{StackIniDesc}}(\ \textcolor{keywordtype}{int}*\ desc,\ \textcolor{keywordtype}{int}\ capacity}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{config_8h_a1bdd7c1369b250215a080e8421d4ecf3}{ON\_DEBUG}}(,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ varname,}
 \DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filename,}
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function,}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ line\ )\ );}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ stack\_pop\_desc(\ \textcolor{keywordtype}{int}\ desc\ );}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a20a6d39d8d9a01c9c80836a6f0a2dee4}{stack\_pop\_desc}}(\ \textcolor{keywordtype}{int}\ desc\ );}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ stack\_push\_desc(\ \textcolor{keywordtype}{int}\ desc,\ stack\_data\ temp\ );}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a1053422d2297c6b1d5abcccbe4449df9}{stack\_push\_desc}}(\ \textcolor{keywordtype}{int}\ desc,\ \doxymbox{\hyperlink{config_8h_a049eb3a9834b6686283ada91d406b499}{stack\_data}}\ temp\ );}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ stack\_destr\_desc(\ \textcolor{keywordtype}{int}*\ desc\ );}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{stack_8cpp_a25c6f05794dc68a0a5977de6e48fe1f5}{stack\_destr\_desc}}(\ \textcolor{keywordtype}{int}*\ desc\ );}
 
 \end{DoxyCode}

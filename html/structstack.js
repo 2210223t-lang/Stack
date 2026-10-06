@@ -1,6 +1,6 @@
 var structstack =
 [
-    [ "ON_DEBUG", "structstack.html#a8825bf667fbcaaeb256965fc6c5af0ab", null ],
+    [ "ON_DEBUG", "structstack.html#a204d0721f0bd450be6f95cffba20f46d", null ],
     [ "capacity", "structstack.html#a152808cfa48be742febaf4ced9e08c40", null ],
     [ "data", "structstack.html#afd6e6d7820f9ebbae19ec6fedf9ad2ac", null ],
     [ "hash", "structstack.html#a103f27c265208d631cc1f1487d59194b", null ],

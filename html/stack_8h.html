@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stack: stack.h File Reference</title>
+<title>Stack: stack.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">stack
+   <div id="projectname">Stack<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -209,6 +209,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroys choosen stack - variable. </p>
+<p>Free stk-&gt;data </p>
 
 </div>
 </div>
@@ -293,7 +294,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">temp</td><td>value to be initialized</td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">stk</td><td>where add temp </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">stk</td><td>where to add temp </td></tr>
   </table>
   </dd>
 </dl>
@@ -343,6 +344,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes stack variable. </p>
+<p>Allocates stk-&gt;data with capacity cells + canaries </p>
 <p>Not 0, to leave space for canary</p>
 
 </div>

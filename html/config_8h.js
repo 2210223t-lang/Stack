@@ -1,6 +1,5 @@
 var config_8h =
 [
-    [ "stack_save", "structstack__save.html", "structstack__save" ],
     [ "stack", "structstack.html", "structstack" ],
     [ "ESCAPE", "config_8h.html#afe4b0e625372cd38ec60150d6f5594b8", null ],
     [ "hash_mismatch", "config_8h.html#a613504a842166314bc84c3555d91cf1f", null ],

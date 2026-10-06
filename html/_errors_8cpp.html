@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stack: utility/Errors.cpp File Reference</title>
+<title>Stack: utility/Errors.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">stack
+   <div id="projectname">Stack<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('_errors_8cpp.h
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;malloc/malloc.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="colours_8h_source.html">colours.h</a>&quot;</code><br />
+<code>#include &quot;colours.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="errors_8h_source.html">errors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_utility_8h_source.html">Utility.h</a>&quot;</code><br />
@@ -173,6 +173,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks hash. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -206,6 +207,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks size &amp; capacity &gt; 0. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 <p>stk-&gt;data size + canaries sizes</p>
 
 </div>
@@ -248,10 +250,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">stk</td><td>stack to check</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">backup_stk</td><td>stk backup </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">backup_stk</td><td>stk backup</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -285,7 +288,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if user is trying to initialized not-null variable. </p>
-<p>Repo count on using stk_destr function </p>
+<p>Repo count on using stk_destr function</p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -319,6 +323,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks stk pointer correctness. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -352,6 +357,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks canaries status. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -385,6 +391,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks size &lt; capacity. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -418,6 +425,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if stk-&gt;size &lt; 0. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -451,6 +459,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if user defined correct variable type. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>

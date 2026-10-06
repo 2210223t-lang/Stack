@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stack: stack.cpp File Reference</title>
+<title>Stack: stack.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">stack
+   <div id="projectname">Stack<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('stack_8cpp.htm
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:stack_5Fstat" id="r_stack_5Fstat"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structstack__stat.html">stack_stat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure, which is used in desc functions to store info about current free cells in allocated memory.  <a href="structstack__stat.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -217,6 +218,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroys choosen stack - variable. </p>
+<p>Free stk-&gt;data </p>
 
 </div>
 </div>
@@ -301,7 +303,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">temp</td><td>value to be initialized</td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">stk</td><td>where add temp </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">stk</td><td>where to add temp </td></tr>
   </table>
   </dd>
 </dl>
@@ -345,12 +347,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int capacity </td>          <td class="paramname"><span class="paramname"><em>ON_DEBUG</em></span>, const char * varname, const char *filename, const char *function, const int line&#160;)</td>
+          <td class="paramtype">int capacity </td>          <td class="paramname"><span class="paramname"><em>ON_DEBUG</em></span>, const char *varname, const char *filename, const char *function, const int line&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Initializes stack variable. </p>
+<p>Allocates stk-&gt;data with capacity cells + canaries </p>
 <p>Not 0, to leave space for canary</p>
 
 </div>

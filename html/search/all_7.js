@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['incorrect_5fdimension_0',['incorrect_dimension',['../errors_8h.html#adf6caf2cac848edf21ddd3e1dd65015c',1,'errors.h']]],
-  ['incorrect_5fdimensions_1',['INCORRECT_DIMENSIONS',['../errors_8h.html#ad6dcd0f181a7a0e0dc0072d4f7a4fccba22798b19908192b86a97e57b1b1a18ce',1,'errors.h']]],
-  ['incorrect_5fdimensions_2',['incorrect_dimensions',['../config_8h.html#ab87e2be7a02acfaaf33cf80c7626a2c2',1,'config.h']]],
-  ['incorrectd_3',['IncorrectD',['../_errors_8cpp.html#a90efd9aefe61694d853e2e1c048f8242',1,'IncorrectD(stack *stk, const char *filename, const char *function, const int line):&#160;Errors.cpp'],['../errors_8h.html#a90efd9aefe61694d853e2e1c048f8242',1,'IncorrectD(stack *stk, const char *filename, const char *function, const int line):&#160;Errors.cpp']]],
-  ['init_5finfo_4',['init_info',['../stack_8cpp.html#a34cbbd58b3d3b94e8335a8cad5eb6bfc',1,'init_info(stack *stk ON_DEBUG(, const char *varname, const char *filename, const char *function, const int line)):&#160;stack.cpp'],['../stack_8h.html#a33ba233a19b3c6c01a04d79100a92cc8',1,'init_info(stack *stk1 ON_DEBUG(, const char *varname, const char *filename, const char *function, const int line)):&#160;stack.h']]],
-  ['int_5fs_5',['INT_S',['../_utility_8h.html#aacb79576e5cf053ee9c93cb9d665e32badff68a92f89d848c9f63558870fd08ec',1,'Utility.h']]]
+  ['lack_5fof_5fmemory_0',['lack_of_memory',['../config_8h.html#ab32f25588a0c842000b76caf5fb741e0',1,'config.h']]],
+  ['log_2ecpp_1',['log.cpp',['../log_8cpp.html',1,'']]],
+  ['log_2eh_2',['log.h',['../log_8h.html',1,'']]],
+  ['logger_5fclose_3',['logger_close',['../log_8cpp.html#a59c77d233157db1c24d6553a2567e442',1,'logger_close(void):&#160;log.cpp'],['../log_8h.html#a59c77d233157db1c24d6553a2567e442',1,'logger_close(void):&#160;log.cpp']]],
+  ['logger_5fname_4',['logger_name',['../log_8h.html#a16c92a2c047aec4c07ebf308e579621f',1,'log.h']]],
+  ['logger_5fopen_5',['logger_open',['../log_8cpp.html#aafe8a63b3b1397c308ff69a6c989ba8a',1,'logger_open():&#160;log.cpp'],['../log_8h.html#aafe8a63b3b1397c308ff69a6c989ba8a',1,'logger_open():&#160;log.cpp']]],
+  ['long_5flong_5fs_6',['LONG_LONG_S',['../_utility_8h.html#aacb79576e5cf053ee9c93cb9d665e32ba2ed0bd871c94d35ba7da282b534ae8e9',1,'Utility.h']]]
 ];

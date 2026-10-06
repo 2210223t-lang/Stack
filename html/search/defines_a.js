@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pyrrhuloxia_0',['PYRRHULOXIA',['../config_8h.html#a64f0441332a4af08f409af8bbda19928',1,'config.h']]]
+  ['unforeseen_5ftype_0',['unforeseen_type',['../config_8h.html#af88aaa3cb754a63b3ec19215f6f09d5d',1,'config.h']]]
 ];

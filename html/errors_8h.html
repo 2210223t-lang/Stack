@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>stack: utility/errors.h File Reference</title>
+<title>Stack: utility/errors.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">stack
+   <div id="projectname">Stack<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -134,6 +134,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#ad6dcd0f181a7a0e0dc0072d4f7a4fccbac916c3bc089d7d105ed7ee30489b49dc">HASH_MISMATCH</a> = 421
 <br />
  }</td></tr>
+<tr class="memdesc:ad6dcd0f181a7a0e0dc0072d4f7a4fccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error codes.  <a href="#ad6dcd0f181a7a0e0dc0072d4f7a4fccb">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -170,6 +171,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Error codes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c" name="ad6dcd0f181a7a0e0dc0072d4f7a4fccbafdfbdf3247bd36a1f17270d5cec74c9c"></a>Success&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a" name="ad6dcd0f181a7a0e0dc0072d4f7a4fccba3475f53fc319198e49ed63764209f09a"></a>NULLPTR&#160;</td><td class="fielddoc"></td></tr>
@@ -218,6 +221,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks hash. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -251,6 +255,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks dimensions correctness. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -284,6 +289,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks size &amp; capacity &gt; 0. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 <p>stk-&gt;data size + canaries sizes</p>
 
 </div>
@@ -326,10 +332,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">stk</td><td>stack to check</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">backup_stk</td><td>stk backup </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">backup_stk</td><td>stk backup</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -363,7 +370,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if user is trying to initialized not-null variable. </p>
-<p>Repo count on using stk_destr function </p>
+<p>Repo count on using stk_destr function</p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -397,6 +405,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks stk pointer correctness. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -430,6 +439,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks canaries status. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -463,6 +473,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks size &lt; capacity. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -496,6 +507,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if stk-&gt;size &lt; 0. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
@@ -529,6 +541,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks if user defined correct variable type. </p>
+<dl class="section return"><dt>Returns</dt><dd>Exit status </dd></dl>
 
 </div>
 </div>
