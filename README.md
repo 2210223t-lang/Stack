@@ -25,7 +25,7 @@ Repository contains standard vector functions from c++, such as: push or pop:
 
 ### Changing storing type
 
-Repository work with int variables, but if you need another type, you can open file: 'config.h' and change typedef value of stack_data on needed.
+Repository work with int variables, but if you need another type, you can open file: ```config.h``` and change typedef value of stack_data on needed.
 
 List of supported types:
 1) short
@@ -46,21 +46,21 @@ One of the essential functions of this repository is to display every single pro
 To turn on this function delete
 > #define NO_DEBUG
 
-In 'config.h'
+In ```config.h```
 
-Also you can change output stream, to do it, open file 'Debug/lig.h' and change value of logger_filename.
+Also you can change output stream, to do it, open file ```Debug/log.h``` and change value of logger_filename.
 
 ### Details
 
 All debugging functions you can find in 'Debug' folder.
 
-1. 'Log' files contain log - output related functions.
+1. ```Log``` files contain log - output related functions.
 
-2. 'Utility.cpp' consist of many other useful 3. functions.
+2. ```Utility.cpp``` consist of many other useful 3. functions.
 
-3. 'Errors.cpp' is aimed to handle all types of errors and print useful info.
+3. ```Errors.cpp``` is aimed to handle all types of errors and print useful info.
 
-4. 'hash.cpp' consist of hashing functions.
+4. ```hash.cpp``` consist of hashing functions.
 
 Also you can use 2 types of stack - functions ( common ) and common_desc
 
